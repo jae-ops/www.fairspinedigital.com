@@ -721,3 +721,12 @@ html, body { overflow-x: hidden; }
   .nav-inner { max-width: 1200px; }
   .footer-inner { max-width: 1200px; }
 }
+
+/* ── DEFINITIVE WHITESPACE FIX UNDER NAV ── */
+body { margin: 0; padding: 0; }
+nav { display: block; margin: 0; padding-bottom: 0; border-bottom: none; }
+nav + * { margin-top: 0 !important; padding-top: 0; }
+.mobile-drawer { margin: 0; padding-top: 0; }
+/* Nuclear option: remove any block-level gap after nav */
+nav ~ .mobile-drawer ~ * { margin-top: 0 !important; }
+.page-hero { margin-top: 0 !important; }

@@ -93,7 +93,7 @@
     </button>
     </div>
   </div></nav><!-- MOBILE DRAWER -->
-<div class="mobile-drawer" id="mobileDrawer">
+<div class="mobile-drawer" aria-hidden="true" id="mobileDrawer">
   <a href="index.html">Home</a>
   <a href="about.html">Approach</a>
   <a href="services.html">Our Services</a>
@@ -109,22 +109,7 @@
   </div>
 </div>
 
-<script>
-function toggleDrawer() {
-  var d = document.getElementById('mobileDrawer');
-  var h = document.getElementById('navHamburger');
-  var open = d.classList.toggle('open');
-  h.classList.toggle('open', open);
-  document.body.style.overflow = open ? 'hidden' : '';
-}
-function closeDrawer() {
-  document.getElementById('mobileDrawer').classList.remove('open');
-  document.getElementById('navHamburger').classList.remove('open');
-  document.body.style.overflow = '';
-}
-// Close drawer on resize to desktop
-window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeDrawer(); });
-</script>
+
 
 <!-- SEARCH OVERLAY -->
 <div class="search-overlay" id="searchOverlay">
@@ -341,6 +326,22 @@ function runSearch(q){
   var p=window.location.pathname.split('/').pop()||'index.html';
   document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});
 })();
+</script>
+<script>
+function toggleDrawer() {
+  var d = document.getElementById('mobileDrawer');
+  var h = document.getElementById('navHamburger');
+  var open = d.classList.toggle('open');
+  h.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeDrawer() {
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close drawer on resize to desktop
+window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeDrawer(); });
 </script>
 </body>
 </html>
