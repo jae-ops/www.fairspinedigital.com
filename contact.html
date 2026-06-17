@@ -1,151 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<meta name="description" content="Get in touch with Fairspine Digital — email, phone, WhatsApp, or fill in our contact form."/>
 <title>Contact — Fairspine Digital</title>
-<meta name="description" content="Get in touch with Fairspine Digital to start a project — tell us about your brand and what you're trying to achieve." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header class="site-header">
-  <div class="container nav">
-    <a href="index.html" class="logo">
-      <span class="logo__mark" aria-hidden="true">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="9"/>
-          <path d="M12 12 16 8.5"/>
-          <circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/>
-        </svg>
-      </span>
-      <span class="logo__text">FAIRSPINE<span class="logo__sub">DIGITAL</span></span>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <svg class="windmill-logo" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>.blades{transform-origin:18px 20px;animation:spin 4s linear infinite;}@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes slide{0%,100%{transform:translateX(0);}50%{transform:translateX(5px);}}@media(prefers-reduced-motion:reduce){.blades{animation:none;}}</style>
+        <path d="M16.5 22 L15 34 L21 34 L19.5 22 Z" fill="#1EB882"/>
+        <g class="blades">
+          <path d="M18 20 L12 8 Q11 6 13 7 L18 17.5 Z" fill="#1EB882" opacity="0.9"/>
+          <path d="M18 20 L30 16 Q32 15.5 31 17.5 L18.5 20.5 Z" fill="#1EB882" opacity="0.7"/>
+          <path d="M18 20 L24 32 Q25 34 23 33 L17.5 22.5 Z" fill="#1EB882" opacity="0.55"/>
+          <path d="M18 20 L6 24 Q4 24.5 5 22.5 L17.5 19.5 Z" fill="#1EB882" opacity="0.4"/>
+          <circle cx="18" cy="20" r="2.5" fill="#ffffff"/>
+          <circle cx="18" cy="20" r="1.5" fill="#0D1B2A"/>
+        </g>
+      </svg>
+      <span style="display:flex;flex-direction:column;line-height:1.2;"><span style="animation:slide 2.5s ease-in-out infinite reverse;">Fairspine</span><span style="font-weight:400;font-size:0.78rem;letter-spacing:0.1em;opacity:0.7;animation:slide 2.5s ease-in-out infinite;">Digital</span></span>
     </a>
-    <nav class="nav__links" id="navLinks">
-      <a href="services.html">Channels</a>
-      <a href="about.html">Approach</a>
-      <a href="pricing.html">Packages</a>
-      <a href="insights.html">Insights</a>
-      <a href="contact.html" class="nav__cta" aria-current="page">Start a project</a>
-    </nav>
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">Approach</a></li>
+      <li><a href="pilot.html">60-Day Pilot</a></li>
+      <li><a href="regions.html">Regions</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="pilot.html" class="btn btn-primary">Start a project</a>
   </div>
-</header>
+</nav>
 
-<main id="main">
+<div class="page-hero">
+  <div class="eyebrow">Get in touch</div>
+  <h1>Let's start a <span>conversation.</span></h1>
+  <p>Tell us about your brand and what you're trying to achieve. We'll come back with a clear starting point — no jargon, no fluff.</p>
+</div>
+<section class="section">
+  <div class="section-inner" style="max-width:720px;">
+    <div class="section-tag">Contact us</div>
+    <h2 class="section-title">Start a project.</h2>
+    <p class="section-sub">Fill in a few details and we'll be in touch within one business day. No jargon, no fluff.</p>
 
-  <!-- PAGE HEADER -->
-  <section class="page-header">
-    <div class="container">
-      <p class="eyebrow eyebrow--blue-soft">Get in touch</p>
-      <h1>Ready to get on air?</h1>
-      <p>Tell us a little about your brand and what you're trying to achieve. We'll come back with some thoughts on where to start.</p>
-    </div>
-  </section>
+    <div style="background:var(--offwhite);border:1px solid var(--gray-100);border-radius:16px;padding:2.5rem;">
 
-  <!-- CONTACT -->
-  <section class="cta">
-    <div class="container cta__grid">
-      <div class="cta__content reveal">
-        <h3>Contact details</h3>
-        <ul class="cta__contact-list">
-          <li>
-            <span class="cta__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
-            </span>
-            +27 84 389 2317
-          </li>
-          <li>
-            <span class="cta__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
-            </span>
-            hello@fairspinedigital.com
-          </li>
-        </ul>
-      </div>
-      <form class="cta__form reveal">
-        <div class="cta__field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+      <form action="https://formspree.io/f/mdavvoek" method="POST" style="display:flex;flex-direction:column;gap:1.1rem;">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div>
+            <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--gray-700);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;">Your name *</label>
+            <input type="text" name="name" placeholder="Jane Smith" required style="width:100%;padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:'Inter',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
+          </div>
+          <div>
+            <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--gray-700);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;">Email address *</label>
+            <input type="email" name="email" placeholder="jane@yourcompany.com" required style="width:100%;padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:'Inter',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
+          </div>
         </div>
-        <div class="cta__field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+
+        <div>
+          <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--gray-700);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;">Company / Brand</label>
+          <input type="text" name="company" placeholder="Acme Ltd" style="width:100%;padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:'Inter',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
         </div>
-        <div class="cta__field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+
+        <div>
+          <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--gray-700);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;">Job Title</label>
+          <input type="text" name="job_title" placeholder="e.g. Marketing Manager" style="width:100%;padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:'Inter',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
         </div>
-        <button type="submit" class="btn btn--primary">Send message</button>
+
+        <div>
+          <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--gray-700);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;">Tell us about your project *</label>
+          <textarea name="message" placeholder="What are you trying to achieve? Where are you now?" rows="5" required style="width:100%;padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:'Inter',sans-serif;font-size:0.95rem;outline:none;resize:vertical;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"></textarea>
+        </div>
+
+        <!-- Spam protection -->
+        <input type="text" name="_gotcha" style="display:none"/>
+        <!-- Redirect back with success flag -->
+        <input type="hidden" name="_next" value="contact.html?sent=1"/>
+
+        <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.9rem;justify-content:center;margin-top:0.25rem;">Send message &#8594;</button>
+
+        <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+          <a href="mailto:fairspinedigital@gmail.com" style="font-size:0.82rem;color:var(--gray-500);display:flex;align-items:center;gap:6px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--gray-500)'">&#128140; fairspinedigital@gmail.com</a>
+          <a href="tel:+27843892317" style="font-size:0.82rem;color:var(--gray-500);display:flex;align-items:center;gap:6px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--gray-500)'">&#128222; +27 84 389 2317</a>
+          <a href="https://api.whatsapp.com/send/?phone=27843892317&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" style="font-size:0.82rem;color:#25D366;display:flex;align-items:center;gap:6px;text-decoration:none;font-weight:500;">&#128172; WhatsApp Us</a>
+        </div>
+
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
-</main>
-
-<footer class="site-footer">
-  <div class="container footer__grid">
-    <div class="footer__brand">
-      <span class="logo">
-        <span class="logo__mark" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"/><path d="M12 12 16 8.5"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/>
+<script>
+// Show success toast if redirected back after Formspree submission
+(function() {
+  if (window.location.search.includes('sent=1')) {
+    var banner = document.createElement('div');
+    banner.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#065F46;color:#fff;padding:1rem 2rem;border-radius:50px;font-size:0.92rem;font-weight:500;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,0.2);white-space:nowrap;';
+    banner.innerHTML = '&#10003; Message sent — we\'ll be in touch within one business day!';
+    document.body.appendChild(banner);
+    setTimeout(function() { banner.style.opacity='0'; banner.style.transition='opacity 0.5s'; setTimeout(function(){banner.remove();},500); }, 5000);
+  }
+})();
+</script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo" style="color:white;">
+          <svg class="windmill-logo" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.5 22 L15 34 L21 34 L19.5 22 Z" fill="#1EB882"/>
+            <g class="blades">
+              <path d="M18 20 L12 8 Q11 6 13 7 L18 17.5 Z" fill="#1EB882" opacity="0.9"/>
+              <path d="M18 20 L30 16 Q32 15.5 31 17.5 L18.5 20.5 Z" fill="#1EB882" opacity="0.7"/>
+              <path d="M18 20 L24 32 Q25 34 23 33 L17.5 22.5 Z" fill="#1EB882" opacity="0.55"/>
+              <path d="M18 20 L6 24 Q4 24.5 5 22.5 L17.5 19.5 Z" fill="#1EB882" opacity="0.4"/>
+              <circle cx="18" cy="20" r="2.5" fill="#ffffff" opacity="0.9"/>
+              <circle cx="18" cy="20" r="1.5" fill="#0D1B2A"/>
+            </g>
           </svg>
-        </span>
-        <span class="logo__text">FAIRSPINE<span class="logo__sub">DIGITAL</span></span>
-      </span>
-      <p>Fairspine Digital is a digital marketing studio helping brands find, reach and grow their audience — one channel at a time.</p>
-      <div class="footer__social">
-        <a href="#" aria-label="Facebook">FB</a>
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="LinkedIn">LI</a>
-        <a href="#" aria-label="X (Twitter)">X</a>
+          <span style="display:flex;flex-direction:column;line-height:1.2;"><span style="animation:slide 2.5s ease-in-out infinite reverse;">Fairspine</span><span style="font-weight:400;font-size:0.78rem;letter-spacing:0.1em;opacity:0.7;animation:slide 2.5s ease-in-out infinite;">Digital</span></span>
+        </div>
+        <p>A full-funnel digital marketing studio helping brands find, reach, and grow their audience — and their pipeline — one channel at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">Our Approach</a></li>
+          <li><a href="pilot.html">60-Day Pilot</a></li>
+          <li><a href="regions.html">Regions</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:fairspinedigital@gmail.com">fairspinedigital@gmail.com</a></li>
+          <li><a href="tel:+27843892317">+27 84 389 2317</a></li>
+          <li><a href="https://api.whatsapp.com/send/?phone=27843892317&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" style="color:#25D366;font-weight:500;">&#x1F4AC; WhatsApp Us</a></li>
+        </ul>
+        <h4 style="margin-top:1.5rem;">Offices</h4>
+        <ul>
+          <li style="display:flex;align-items:flex-start;gap:7px;margin-bottom:0.5rem;">&#128205;<span style="font-size:0.88rem;line-height:1.5;">London<br><span style="opacity:0.5;font-size:0.8rem;">United Kingdom</span></span></li>
+          <li style="display:flex;align-items:flex-start;gap:7px;margin-bottom:0.5rem;">&#128205;<span style="font-size:0.88rem;line-height:1.5;">Cape Town<br><span style="opacity:0.5;font-size:0.8rem;">South Africa</span></span></li>
+          <li style="display:flex;align-items:flex-start;gap:7px;margin-bottom:0.5rem;">&#128205;<span style="font-size:0.88rem;line-height:1.5;">Nairobi<br><span style="opacity:0.5;font-size:0.8rem;">Kenya</span></span></li>
+          <li style="display:flex;align-items:flex-start;gap:7px;margin-bottom:0.5rem;">&#128205;<span style="font-size:0.88rem;line-height:1.5;">Harare<br><span style="opacity:0.5;font-size:0.8rem;">Zimbabwe</span></span></li>
+          <li style="display:flex;align-items:flex-start;gap:7px;">&#128205;<span style="font-size:0.88rem;line-height:1.5;">Lusaka<br><span style="opacity:0.5;font-size:0.8rem;">Zambia</span></span></li>
+        </ul>
       </div>
     </div>
-    <div class="footer__col">
-      <h4>Channels</h4>
-      <ul>
-        <li><a href="services.html#social-media-marketing">Social Media Marketing</a></li>
-        <li><a href="services.html#seo">SEO</a></li>
-        <li><a href="services.html#website-design">Website Design</a></li>
-        <li><a href="services.html#graphic-motion-design">Graphic &amp; Motion Design</a></li>
-        <li><a href="services.html#ppc-advertising">PPC Advertising</a></li>
-        <li><a href="services.html#email-marketing">Email Marketing</a></li>
-        <li><a href="services.html#content-marketing">Content Marketing</a></li>
-        <li><a href="services.html#influencer-marketing">Influencer Marketing</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Fairspine Digital. All rights reserved.</span>
+      <div class="social-links">
+        <a href="#">FB</a><a href="#">IG</a><a href="#">LI</a><a href="#">X</a>
+      </div>
     </div>
-    <div class="footer__col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="about.html">Approach</a></li>
-        <li><a href="pricing.html">Packages</a></li>
-        <li><a href="insights.html">Insights</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer__col">
-      <h4>Contact</h4>
-      <ul>
-        <li>hello@fairspinedigital.com</li>
-        <li>+27 84 389 2317</li>
-      </ul>
-    </div>
-  </div>
-  <div class="container footer__bottom">
-    <p>© 2026 Fairspine Digital. All rights reserved.</p>
-    <p>Built channel by channel.</p>
   </div>
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="script.js" defer></script>
+<div id="cursor-glow"></div>
+<script src="effects.js"></script>
 </body>
 </html>
