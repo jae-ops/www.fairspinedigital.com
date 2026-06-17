@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="Join the Fairspine Digital team — remote roles in digital marketing globally."/>
 <title>Careers — Fairspine Digital</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
@@ -30,57 +30,10 @@
 </svg><span style="display:flex;flex-direction:column;line-height:1.2;"><span style="animation:slide 2.5s ease-in-out infinite reverse;">Fairspine</span><span style="font-weight:400;font-size:0.78rem;letter-spacing:0.1em;opacity:0.7;animation:slide 2.5s ease-in-out infinite;">Digital</span></span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-
-      <li class="nav-item">
-        <a href="about.html">Approach <span class="caret"></span></a>
-        <div class="dropdown">
-          <div class="dd-label">How we work</div>
-          <a href="about.html"><span class="dd-icon">&#128269;</span> Our Process</a>
-          <a href="about.html#who-we-serve"><span class="dd-icon">&#127970;</span> Who We Serve</a>
-          <div class="dropdown-divider"></div>
-          <a href="pilot.html"><span class="dd-icon">&#128640;</span> 60-Day Pilot</a>
-          <a href="regions.html"><span class="dd-icon">&#127760;</span> Regions</a>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <a href="services.html">Our Services <span class="caret"></span></a>
-        <div class="dropdown">
-          <div class="dd-label">What we do</div>
-          <a href="services.html"><span class="dd-icon">&#128241;</span> Social Media Marketing</a>
-          <a href="services.html"><span class="dd-icon">&#128269;</span> Search Engine Optimisation</a>
-          <a href="services.html"><span class="dd-icon">&#128187;</span> Website Design</a>
-          <a href="services.html"><span class="dd-icon">&#128202;</span> Tracking & Analytics</a>
-          <a href="services.html"><span class="dd-icon">&#128176;</span> PPC Advertising</a>
-          <a href="services.html"><span class="dd-icon">&#128225;</span> Outbound Marketing</a>
-          <div class="dropdown-divider"></div>
-          <a href="services.html"><span class="dd-icon">&#129492;</span> Consulting</a>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <a href="insights.html">Insights <span class="caret"></span></a>
-        <div class="dropdown">
-          <div class="dd-label">Latest articles</div>
-          <a href="https://www.fairspinedigital.com/google-business-profile.html"><span class="dd-icon">&#128205;</span> Local SEO &amp; Google Business</a>
-          <a href="https://www.fairspinedigital.com/social-tune-up.html"><span class="dd-icon">&#128241;</span> Social Content Tune-Up</a>
-          <a href="https://www.fairspinedigital.com/website-brief.html"><span class="dd-icon">&#128187;</span> Briefing a Website Designer</a>
-          <div class="dropdown-divider"></div>
-          <a href="insights.html"><span class="dd-icon">&#128214;</span> View all insights</a>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <a href="careers.html">Careers <span class="caret"></span></a>
-        <div class="dropdown">
-          <div class="dd-label">Open roles</div>
-          <a href="careers.html"><span class="dd-icon">&#128241;</span> Social Media Manager</a>
-          <a href="careers.html"><span class="dd-icon">&#128269;</span> SEO Strategist</a>
-          <a href="careers.html"><span class="dd-icon">&#128202;</span> Tracking &amp; Analytics Specialist</a>
-          <div class="dropdown-divider"></div>
-          <a href="careers.html#apply-form"><span class="dd-icon">&#10024;</span> Apply now</a>
-        </div>
-      </li>
+      <li><a href="about.html">Approach</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="careers.html">Careers</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:0.75rem;">
       <button class="search-btn" onclick="openSearch()" aria-label="Search">
@@ -92,8 +45,11 @@
       <span></span><span></span><span></span>
     </button>
     </div>
-  </div></nav><!-- MOBILE DRAWER -->
-<div class="mobile-drawer" aria-hidden="true" id="mobileDrawer">
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
   <a href="index.html">Home</a>
   <a href="about.html">Approach</a>
   <a href="services.html">Our Services</a>
@@ -109,7 +65,22 @@
   </div>
 </div>
 
-
+<script>
+function toggleDrawer() {
+  var d = document.getElementById('mobileDrawer');
+  var h = document.getElementById('navHamburger');
+  var open = d.classList.toggle('open');
+  h.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeDrawer() {
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close drawer on resize to desktop
+window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeDrawer(); });
+</script>
 
 <!-- SEARCH OVERLAY -->
 <div class="search-overlay" id="searchOverlay">
@@ -512,22 +483,6 @@ function runSearch(q){
   var p=window.location.pathname.split('/').pop()||'index.html';
   document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});
 })();
-</script>
-<script>
-function toggleDrawer() {
-  var d = document.getElementById('mobileDrawer');
-  var h = document.getElementById('navHamburger');
-  var open = d.classList.toggle('open');
-  h.classList.toggle('open', open);
-  document.body.style.overflow = open ? 'hidden' : '';
-}
-function closeDrawer() {
-  document.getElementById('mobileDrawer').classList.remove('open');
-  document.getElementById('navHamburger').classList.remove('open');
-  document.body.style.overflow = '';
-}
-// Close drawer on resize to desktop
-window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeDrawer(); });
 </script>
 </body>
 </html>
