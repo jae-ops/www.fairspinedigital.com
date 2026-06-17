@@ -38,9 +38,46 @@
         Search
       </button>
       <a href="contact.html" class="btn btn-primary">Start a project</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </button>
     </div>
   </div>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html">Home</a>
+  <a href="about.html">Approach</a>
+  <a href="services.html">Our Services</a>
+  <a href="insights.html">Insights</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+  <div class="drawer-ctas">
+    <button class="search-btn" onclick="closeDrawer();openSearch();" style="justify-content:center;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      Search
+    </button>
+    <a href="contact.html" class="btn btn-primary">Start a project &#8594;</a>
+  </div>
+</div>
+
+<script>
+function toggleDrawer() {
+  var d = document.getElementById('mobileDrawer');
+  var h = document.getElementById('navHamburger');
+  var open = d.classList.toggle('open');
+  h.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeDrawer() {
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close drawer on resize to desktop
+window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeDrawer(); });
+</script>
 
 <!-- SEARCH OVERLAY -->
 <div class="search-overlay" id="searchOverlay">

@@ -153,3 +153,183 @@ footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 3rem 2r
 @media (prefers-reduced-motion: reduce) {
   .offices-track { animation: none; }
 }
+
+/* ═══════════════════════════════════════════════
+   MOBILE-FIRST RESPONSIVE STYLES
+   Targets: ≤768px (phones), ≤1024px (tablets)
+═══════════════════════════════════════════════ */
+
+/* ── HAMBURGER BUTTON ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+.nav-hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE DRAWER ── */
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--navy);
+  z-index: 99;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.mobile-drawer.open { display: flex; }
+.mobile-drawer a {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mobile-drawer a:hover, .mobile-drawer a.active { color: var(--teal); }
+.mobile-drawer .drawer-ctas {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.mobile-drawer .drawer-ctas .btn {
+  justify-content: center;
+  padding: 0.85rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+
+  /* NAV */
+  .nav-inner { padding: 0 1.25rem; height: 62px; }
+  .nav-links { display: none !important; }
+  .nav-hamburger { display: flex; }
+  .nav-inner > div { gap: 0.5rem; }
+  .nav-inner > div .search-btn { display: none; } /* hidden on mobile — accessible via drawer */
+  .nav-inner > div .btn { display: none; } /* CTA hidden on mobile, shown in drawer */
+
+  /* WINDMILL */
+  .windmill-logo { width: 36px; height: 36px; }
+
+  /* HERO */
+  .page-hero { padding: 3.5rem 1.25rem 3rem; }
+  .page-hero h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+  .page-hero p { font-size: 0.95rem; }
+
+  /* SECTIONS */
+  .section { padding: 3rem 1.25rem; }
+  .section-title { font-size: clamp(1.5rem, 6vw, 2rem); max-width: 100%; }
+  .section-sub { font-size: 0.95rem; margin-bottom: 2rem; max-width: 100%; }
+
+  /* PIPELINE GRID (home page) */
+  .pipeline-inner,
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* CONTACT FORM 2-col grid */
+  [style*="grid-template-columns:1fr 1fr"][style*="gap:1rem"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* STATS BAR */
+  .stats-inner { grid-template-columns: repeat(3, 1fr) !important; gap: 0.75rem; }
+
+  /* PV CARDS (pipeline visual) */
+  .pipeline-visual { grid-template-columns: 1fr 1fr !important; }
+
+  /* FOOTER */
+  .footer-top { grid-template-columns: 1fr !important; gap: 2rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+  /* CAREERS GRID */
+  .careers-grid { grid-template-columns: 1fr !important; }
+
+  /* HOW-IT-WORKS */
+  .how-grid { grid-template-columns: 1fr !important; gap: 1rem; }
+
+  /* SERVICE CARDS */
+  .services-grid,
+  [style*="grid-template-columns:repeat(auto-fit,minmax(280px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* SEARCH BOX */
+  .search-box input { font-size: 1rem; padding: 0.85rem 1.25rem; }
+
+  /* CTA SECTION */
+  .cta-section { padding: 3rem 1.25rem; }
+  .cta-section h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+  /* FOLLOW US SOCIAL PILLS — wrap nicely */
+  .footer-follow > div { gap: 0.6rem; }
+
+  /* OFFICES TICKER */
+  .offices-track { animation-duration: 16s; }
+
+  /* JOB META WRAP */
+  .job-meta { flex-wrap: wrap; }
+
+  /* PILOT STEPS */
+  .pilot-steps { flex-direction: column; align-items: center; }
+  .pilot-step::after { display: none; }
+
+  /* SEARCH RESULTS full width on mobile */
+  .search-results, .search-box { max-width: 100%; }
+
+  /* GENERIC inline grid overrides for all pages */
+  [style*="display:grid"] { grid-template-columns: 1fr !important; }
+
+  /* But keep 2-col for small cards like pv-cards and stat items */
+  .stats-inner { grid-template-columns: repeat(2, 1fr) !important; }
+  .pipeline-visual { grid-template-columns: 1fr 1fr !important; }
+
+  /* BUTTONS in hero */
+  .hero-ctas, [style*="display:flex"][style*="gap:1rem"][style*="flex-wrap:wrap"] {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-ctas .btn { justify-content: center; }
+
+  /* FORM inputs full width */
+  input, textarea, select { width: 100% !important; }
+}
+
+/* ── TABLET (769px – 1024px) ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-inner { padding: 0 1.5rem; }
+  .nav-links { gap: 1.25rem; }
+  .nav-links a { font-size: 0.82rem; }
+  .section { padding: 4rem 1.5rem; }
+  .footer-top { grid-template-columns: 1fr 1fr !important; }
+  .how-grid { grid-template-columns: 1fr 1fr !important; }
+  .pipeline-inner { grid-template-columns: 1fr !important; }
+}
