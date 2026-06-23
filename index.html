@@ -16,7 +16,7 @@
 <body>
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="index.html"><svg class="windmill-logo" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a class="logo" href="/"><svg class="windmill-logo" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>.blades{transform-origin:18px 20px;animation:spin 4s linear infinite;}@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes slide{0%,100%{transform:translateX(0);}50%{transform:translateX(5px);}}@media(prefers-reduced-motion:reduce){.blades{animation:none;}}</style>
   <path d="M16.5 22 L15 34 L21 34 L19.5 22 Z" fill="#1EB882"/>
   <g class="blades">
@@ -29,18 +29,18 @@
   </g>
 </svg><span style="display:flex;flex-direction:column;line-height:1.2;"><span style="animation:slide 2.5s ease-in-out infinite reverse;">Fairspine</span><span style="font-weight:400;font-size:0.78rem;letter-spacing:0.1em;opacity:0.7;animation:slide 2.5s ease-in-out infinite;">Digital</span></span></a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Approach</a></li>
-      <li><a href="services.html">Our Services</a></li>
-      <li><a href="insights.html">Insights</a></li>
-      <li><a href="careers.html">Careers</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">Approach</a></li>
+      <li><a href="/services">Our Services</a></li>
+      <li><a href="/insights">Insights</a></li>
+      <li><a href="/careers">Careers</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:0.75rem;">
       <button class="search-btn" onclick="openSearch()" aria-label="Search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         Search
       </button>
-      <a href="contact.html" class="btn btn-primary">Start a project</a>
+      <a href="/contact" class="btn btn-primary">Start a project</a>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleDrawer()">
       <span></span><span></span><span></span>
     </button>
@@ -50,18 +50,18 @@
  
 <!-- MOBILE DRAWER -->
 <div class="mobile-drawer" id="mobileDrawer">
-  <a href="index.html">Home</a>
-  <a href="about.html">Approach</a>
-  <a href="services.html">Our Services</a>
-  <a href="insights.html">Insights</a>
-  <a href="careers.html">Careers</a>
-  <a href="contact.html">Contact</a>
+  <a href="/">Home</a>
+  <a href="/about">Approach</a>
+  <a href="/services">Our Services</a>
+  <a href="/insights">Insights</a>
+  <a href="/careers">Careers</a>
+  <a href="/contact">Contact</a>
   <div class="drawer-ctas">
     <button class="search-btn" onclick="closeDrawer();openSearch();" style="justify-content:center;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       Search
     </button>
-    <a href="contact.html" class="btn btn-primary">Start a project &#8594;</a>
+    <a href="/contact" class="btn btn-primary">Start a project &#8594;</a>
   </div>
 </div>
  
@@ -99,8 +99,8 @@ window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeD
     <h1>We grow your brand.<br/>We grow your <span>pipeline.</span></h1>
     <p style="margin-bottom:2.5rem;">Fairspine Digital plans the strategy, builds the channels, and tracks what moves the needle — so your audience grows and your revenue follows.</p>
     <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
-      <a href="pilot.html" class="btn btn-primary">Start your 60-day pilot &#8594;</a>
-      <a href="services.html" class="btn btn-outline">Our services</a>
+      <a href="/pilot" class="btn btn-primary">Start your 60-day pilot &#8594;</a>
+      <a href="/services" class="btn btn-outline">Our services</a>
     </div>
   </div>
 </section>
@@ -150,14 +150,14 @@ window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeD
       <div class="service-card"><div class="sc-icon">&#128202;</div><div class="sc-num">03</div><h3>Tracking & Analytics</h3><p>GA4, Meta Pixel, GTM and custom dashboards — clean data for every decision.</p></div>
       <div class="service-card"><div class="sc-icon">&#128161;</div><div class="sc-num">04</div><h3>Outbound Marketing</h3><p>Prospecting sequences that fill your pipeline proactively.</p></div>
     </div>
-    <div style="margin-top:2rem;text-align:center;"><a href="services.html" class="btn btn-dark">View all 9 services &#8594;</a></div>
+    <div style="margin-top:2rem;text-align:center;"><a href="/services" class="btn btn-dark">View all 9 services &#8594;</a></div>
   </div>
 </section>
 <section class="cta-section">
   <h2>Ready to grow your brand and your pipeline?</h2>
   <p>Tell us about your business. We'll come back with a clear starting point.</p>
   <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
-    <a href="contact.html" class="btn btn-dark" style="font-size:1rem;padding:0.85rem 2.2rem;">Start a project &#8594;</a>
+    <a href="/contact" class="btn btn-dark" style="font-size:1rem;padding:0.85rem 2.2rem;">Start a project &#8594;</a>
     <a href="https://api.whatsapp.com/send/?phone=27843892317&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="btn" style="font-size:1rem;padding:0.85rem 2.2rem;background:#25D366;color:#fff;font-weight:600;border-radius:50px;">&#x1F4AC; WhatsApp Us</a>
   </div>
 </section>
@@ -184,12 +184,12 @@ window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeD
       <div class="footer-col">
         <h4>Pages</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">Approach</a></li>
-          <li><a href="services.html">Our Services</a></li>
-          <li><a href="insights.html">Insights</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">Approach</a></li>
+          <li><a href="/services">Our Services</a></li>
+          <li><a href="/insights">Insights</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -260,25 +260,25 @@ window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeD
 <div id="cursor-glow"></div>
 <script>
 var PAGES = [
-  {url:'index.html', tag:'Home', title:'Home', desc:'Full-funnel digital marketing that grows your brand and your pipeline.'},
-  {url:'about.html', tag:'Approach', title:'Our Approach', desc:'Strategy-first, data-driven. Four steps: audit, strategy, execute, track.'},
-  {url:'services.html', tag:'Services', title:'Social Media Marketing', desc:'Content calendars, creative and community management across your key platforms.'},
-  {url:'services.html', tag:'Services', title:'Search Engine Optimisation', desc:'Technical fixes and a content plan built around what your customers search for.'},
-  {url:'services.html', tag:'Services', title:'Website Design', desc:'Fast, mobile-friendly sites built to convert visitors into leads.'},
-  {url:'services.html', tag:'Services', title:'Graphic & Motion Design', desc:'Brand assets, social templates and short-form video edits.'},
-  {url:'services.html', tag:'Services', title:'PPC Advertising', desc:'Paid campaigns on Google and Meta that convert clicks into leads.'},
-  {url:'services.html', tag:'Services', title:'Email Marketing', desc:'Automated sequences that nurture your list from contact to customer.'},
-  {url:'services.html', tag:'Services', title:'Tracking & Analytics', desc:'GA4, Meta Pixel, GTM and custom dashboards — clean data for every decision.'},
-  {url:'services.html', tag:'Services', title:'Content Marketing', desc:'Blog posts and guides that build authority and bring organic traffic.'},
-  {url:'services.html', tag:'Services', title:'Outbound Marketing', desc:'Prospecting sequences that build your pipeline before leads come looking.'},
-  {url:'insights.html', tag:'Insights', title:'Google Business Profile', desc:'Your GBP is doing more work than your website for local visibility.'},
-  {url:'insights.html', tag:'Insights', title:'Social content tune-up', desc:'Three signs your social content has drifted out of sync.'},
-  {url:'insights.html', tag:'Insights', title:'Briefing a website designer', desc:'A short guide to writing a clear, effective website brief.'},
-  {url:'careers.html', tag:'Careers', title:'Social Media Manager', desc:'Remote · Full-time · Africa or Europe'},
-  {url:'careers.html', tag:'Careers', title:'Paid Media Specialist', desc:'Remote · Full-time · Global'},
-  {url:'careers.html', tag:'Careers', title:'SEO Strategist', desc:'Remote · Part-time or Full-time · Global'},
-  {url:'careers.html', tag:'Careers', title:'Account Manager', desc:'Remote · Full-time · Africa or Europe'},
-  {url:'contact.html', tag:'Contact', title:'Get in touch', desc:'Email, WhatsApp or fill in our contact form — we reply within one business day.'},
+  {url:'/', tag:'Home', title:'Home', desc:'Full-funnel digital marketing that grows your brand and your pipeline.'},
+  {url:'/about', tag:'Approach', title:'Our Approach', desc:'Strategy-first, data-driven. Four steps: audit, strategy, execute, track.'},
+  {url:'/services', tag:'Services', title:'Social Media Marketing', desc:'Content calendars, creative and community management across your key platforms.'},
+  {url:'/services', tag:'Services', title:'Search Engine Optimisation', desc:'Technical fixes and a content plan built around what your customers search for.'},
+  {url:'/services', tag:'Services', title:'Website Design', desc:'Fast, mobile-friendly sites built to convert visitors into leads.'},
+  {url:'/services', tag:'Services', title:'Graphic & Motion Design', desc:'Brand assets, social templates and short-form video edits.'},
+  {url:'/services', tag:'Services', title:'PPC Advertising', desc:'Paid campaigns on Google and Meta that convert clicks into leads.'},
+  {url:'/services', tag:'Services', title:'Email Marketing', desc:'Automated sequences that nurture your list from contact to customer.'},
+  {url:'/services', tag:'Services', title:'Tracking & Analytics', desc:'GA4, Meta Pixel, GTM and custom dashboards — clean data for every decision.'},
+  {url:'/services', tag:'Services', title:'Content Marketing', desc:'Blog posts and guides that build authority and bring organic traffic.'},
+  {url:'/services', tag:'Services', title:'Outbound Marketing', desc:'Prospecting sequences that build your pipeline before leads come looking.'},
+  {url:'/insights', tag:'Insights', title:'Google Business Profile', desc:'Your GBP is doing more work than your website for local visibility.'},
+  {url:'/insights', tag:'Insights', title:'Social content tune-up', desc:'Three signs your social content has drifted out of sync.'},
+  {url:'/insights', tag:'Insights', title:'Briefing a website designer', desc:'A short guide to writing a clear, effective website brief.'},
+  {url:'/careers', tag:'Careers', title:'Social Media Manager', desc:'Remote · Full-time · Africa or Europe'},
+  {url:'/careers', tag:'Careers', title:'Paid Media Specialist', desc:'Remote · Full-time · Global'},
+  {url:'/careers', tag:'Careers', title:'SEO Strategist', desc:'Remote · Part-time or Full-time · Global'},
+  {url:'/careers', tag:'Careers', title:'Account Manager', desc:'Remote · Full-time · Africa or Europe'},
+  {url:'/contact', tag:'Contact', title:'Get in touch', desc:'Email, WhatsApp or fill in our contact form — we reply within one business day.'},
   {url:'regions.html', tag:'Regions', title:'EMEA', desc:'Europe, Middle East & Africa — UK, EU, UAE, South Africa, Nigeria, Kenya.'},
   {url:'regions.html', tag:'Regions', title:'APAC', desc:'Asia Pacific — Australia, Singapore, India, Japan, SEA.'},
   {url:'regions.html', tag:'Regions', title:'AMER', desc:'The Americas — USA, Canada, Brazil, Mexico, LATAM.'},
@@ -314,7 +314,7 @@ function runSearch(q){
   document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){io.observe(el);});
 })();
 (function(){
-  var p=window.location.pathname.split('/').pop()||'index.html';
+  var p=window.location.pathname.split('/').pop()||'/';
   document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});
 })();
 </script>
