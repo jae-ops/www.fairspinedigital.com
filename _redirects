@@ -1,0 +1,17 @@
+/about          /about.html         200
+/services       /services.html      200
+/insights       /insights.html      200
+/contact        /contact.html       200
+/careers        /careers.html       200
+/broadcast      /broadcast.html     200
+/pilot          /pilot.html         200
+/regions        /regions.html       200
+/google-business-profile  /google-business-profile.html  200
+/social-tune-up           /social-tune-up.html           200
+
+# Redirect old .html URLs to clean ones
+/about.html         /about          301
+/services.html      /services       301
+/insights.html      /insights       301
+/contact.html       /contact        301
+/careers.html       /careers        301
