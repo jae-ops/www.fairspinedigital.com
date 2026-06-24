@@ -91,7 +91,6 @@ window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeD
   <p class="search-hint">Press Esc to close</p>
 </div>
  
-<!-- ✅ FIX: Removed inline padding override — now uses style.css .page-hero padding (5rem 2rem 4rem) -->
 <section class="page-hero" style="position:relative;overflow:hidden;">
   <canvas id="hero-canvas" style="position:absolute;inset:0;pointer-events:none;z-index:0;"></canvas>
   <div style="position:relative;z-index:1;">
@@ -201,7 +200,6 @@ window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeD
         </ul>
       </div>
     </div>
- 
     <!-- OFFICES TICKER -->
     <div style="overflow:hidden;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:0.85rem 0;margin-bottom:2rem;position:relative;">
       <div style="position:absolute;left:0;top:0;bottom:0;width:60px;background:linear-gradient(to right,var(--navy),transparent);z-index:2;pointer-events:none;"></div>
@@ -254,6 +252,7 @@ window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeD
     </div>
     <div class="footer-bottom">
       <span>&#169; 2026 Fairspine Digital. All rights reserved.</span>
+      <a href="/privacy-policy" style="color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#1EB882'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Privacy Policy</a>
     </div>
   </div>
 </footer>
@@ -279,44 +278,19 @@ var PAGES = [
   {url:'/careers', tag:'Careers', title:'SEO Strategist', desc:'Remote · Part-time or Full-time · Global'},
   {url:'/careers', tag:'Careers', title:'Account Manager', desc:'Remote · Full-time · Africa or Europe'},
   {url:'/contact', tag:'Contact', title:'Get in touch', desc:'Email, WhatsApp or fill in our contact form — we reply within one business day.'},
-  {url:'regions.html', tag:'Regions', title:'EMEA', desc:'Europe, Middle East & Africa — UK, EU, UAE, South Africa, Nigeria, Kenya.'},
-  {url:'regions.html', tag:'Regions', title:'APAC', desc:'Asia Pacific — Australia, Singapore, India, Japan, SEA.'},
-  {url:'regions.html', tag:'Regions', title:'AMER', desc:'The Americas — USA, Canada, Brazil, Mexico, LATAM.'},
-  {url:'regions.html', tag:'Regions', title:'MENA', desc:'Middle East & North Africa — Saudi Arabia, UAE, Egypt, Qatar.'},
-  {url:'regions.html', tag:'Regions', title:'SSA', desc:'Sub-Saharan Africa — South Africa, Nigeria, Kenya, Ghana, Zimbabwe, Zambia.'},
+  {url:'/regions', tag:'Regions', title:'EMEA', desc:'Europe, Middle East & Africa — UK, EU, UAE, South Africa, Nigeria, Kenya.'},
+  {url:'/regions', tag:'Regions', title:'APAC', desc:'Asia Pacific — Australia, Singapore, India, Japan, SEA.'},
+  {url:'/regions', tag:'Regions', title:'AMER', desc:'The Americas — USA, Canada, Brazil, Mexico, LATAM.'},
+  {url:'/regions', tag:'Regions', title:'MENA', desc:'Middle East & North Africa — Saudi Arabia, UAE, Egypt, Qatar.'},
+  {url:'/regions', tag:'Regions', title:'SSA', desc:'Sub-Saharan Africa — South Africa, Nigeria, Kenya, Ghana, Zimbabwe, Zambia.'},
 ];
- 
-function openSearch(){
-  document.getElementById('searchOverlay').classList.add('open');
-  setTimeout(function(){document.getElementById('searchInput').focus();},80);
-}
-function closeSearch(){
-  document.getElementById('searchOverlay').classList.remove('open');
-  document.getElementById('searchInput').value='';
-  document.getElementById('searchResults').innerHTML='';
-}
+function openSearch(){document.getElementById('searchOverlay').classList.add('open');setTimeout(function(){document.getElementById('searchInput').focus();},80);}
+function closeSearch(){document.getElementById('searchOverlay').classList.remove('open');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
 document.addEventListener('keydown',function(e){if(e.key==='/'&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA'){e.preventDefault();openSearch();}if(e.key==='Escape')closeSearch();});
-function runSearch(q){
-  var el=document.getElementById('searchResults');
-  if(!q||q.trim().length<2){el.innerHTML='';return;}
-  var t=q.toLowerCase();
-  var hits=PAGES.filter(function(p){return p.title.toLowerCase().includes(t)||p.desc.toLowerCase().includes(t)||p.tag.toLowerCase().includes(t);});
-  if(!hits.length){el.innerHTML='<div class="search-no-results">No results for <strong style=\'color:#fff;\'>'+q+'</strong></div>';return;}
-  el.innerHTML=hits.slice(0,8).map(function(p){
-    return '<a class="search-result-item" href="'+p.url+'"><div class="r-tag">'+p.tag+'</div><div class="r-title">'+p.title+'</div><div class="r-desc">'+p.desc+'</div></a>';
-  }).join('');
-}
+function runSearch(q){var el=document.getElementById('searchResults');if(!q||q.trim().length<2){el.innerHTML='';return;}var t=q.toLowerCase();var hits=PAGES.filter(function(p){return p.title.toLowerCase().includes(t)||p.desc.toLowerCase().includes(t)||p.tag.toLowerCase().includes(t);});if(!hits.length){el.innerHTML='<div class="search-no-results">No results for <strong style='color:#fff;'>'+q+'</strong></div>';return;}el.innerHTML=hits.slice(0,8).map(function(p){return '<a class="search-result-item" href="'+p.url+'"><div class="r-tag">'+p.tag+'</div><div class="r-title">'+p.title+'</div><div class="r-desc">'+p.desc+'</div></a>';}).join('');}
 (function(){var g=document.getElementById('cursor-glow');if(!g)return;document.addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';});})();
-(function(){
-  document.querySelectorAll('.section-tag,.section-title,.section-sub').forEach(function(el){el.classList.add('reveal');});
-  document.querySelectorAll('.service-card,.job-card,.how-step,.pv-card').forEach(function(el,i){el.classList.add('reveal');el.classList.add('delay-'+((i%6)+1));});
-  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.1});
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){io.observe(el);});
-})();
-(function(){
-  var p=window.location.pathname.split('/').pop()||'/';
-  document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});
-})();
+(function(){document.querySelectorAll('.section-tag,.section-title,.section-sub').forEach(function(el){el.classList.add('reveal');});document.querySelectorAll('.service-card,.job-card,.how-step,.pv-card').forEach(function(el,i){el.classList.add('reveal');el.classList.add('delay-'+((i%6)+1));});var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.1});document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){io.observe(el);});})();
+(function(){var p=window.location.pathname;document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();
 </script>
 </body>
 </html>
