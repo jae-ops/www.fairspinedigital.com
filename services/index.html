@@ -12,74 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/style.css"/>
-<style>
-/* ── PLATFORM TICKER ── */
-.platform-ticker-wrap {
-  background: var(--offwhite);
-  padding: 4rem 0;
-  overflow: hidden;
-  position: relative;
-}
-.platform-ticker-label {
-  text-align: center;
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray-500);
-  margin-bottom: 2rem;
-}
-.platform-ticker {
-  position: relative;
-  overflow: hidden;
-}
-.platform-ticker::before,
-.platform-ticker::after {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-.platform-ticker::before { left: 0; background: linear-gradient(to right, var(--offwhite), transparent); }
-.platform-ticker::after  { right: 0; background: linear-gradient(to left,  var(--offwhite), transparent); }
-.platform-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.25rem;
-  white-space: nowrap;
-  animation: platform-scroll 30s linear infinite;
-}
-.platform-track:hover { animation-play-state: paused; }
-@keyframes platform-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.platform-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--white);
-  border: 1px solid var(--gray-100);
-  border-radius: 50px;
-  padding: 0.5rem 1.1rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--gray-700);
-  white-space: nowrap;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.platform-pill:hover {
-  border-color: var(--teal);
-  box-shadow: 0 2px 12px rgba(30,184,130,0.12);
-}
-.platform-pill svg { flex-shrink: 0; }
-@media (prefers-reduced-motion: reduce) {
-  .platform-track { animation: none; }
-}
-</style>
 </head>
 <body>
 <nav>
@@ -98,10 +30,57 @@
 </svg><span style="display:flex;flex-direction:column;line-height:1.2;"><span style="animation:slide 2.5s ease-in-out infinite reverse;">Fairspine</span><span style="font-weight:400;font-size:0.78rem;letter-spacing:0.1em;opacity:0.7;animation:slide 2.5s ease-in-out infinite;">Digital</span></span></a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/about">Approach</a></li>
-      <li><a href="/services">Our Services</a></li>
-      <li><a href="/insights">Insights</a></li>
-      <li><a href="/careers">Careers</a></li>
+
+      <li class="nav-item">
+        <a href="/about">Approach <span class="caret"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">How we work</div>
+          <a href="/about"><span class="dd-icon">&#128269;</span> Our Process</a>
+          <a href="about.html#who-we-serve"><span class="dd-icon">&#127970;</span> Who We Serve</a>
+          <div class="dropdown-divider"></div>
+          <a href="/pilot"><span class="dd-icon">&#128640;</span> 60-Day Pilot</a>
+          <a href="/regions"><span class="dd-icon">&#127760;</span> Regions</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="/services">Our Services <span class="caret"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">What we do</div>
+          <a href="/services"><span class="dd-icon">&#128241;</span> Social Media Marketing</a>
+          <a href="/services"><span class="dd-icon">&#128269;</span> Search Engine Optimisation</a>
+          <a href="/services"><span class="dd-icon">&#128187;</span> Website Design</a>
+          <a href="/services"><span class="dd-icon">&#128202;</span> Tracking & Analytics</a>
+          <a href="/services"><span class="dd-icon">&#128176;</span> PPC Advertising</a>
+          <a href="/services"><span class="dd-icon">&#128225;</span> Outbound Marketing</a>
+          <div class="dropdown-divider"></div>
+          <a href="/services"><span class="dd-icon">&#129492;</span> Consulting</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="/insights">Insights <span class="caret"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">Latest articles</div>
+          <a href="https://www.fairspinedigital.com/google-business-profile.html"><span class="dd-icon">&#128205;</span> Local SEO &amp; Google Business</a>
+          <a href="https://www.fairspinedigital.com/social-tune-up.html"><span class="dd-icon">&#128241;</span> Social Content Tune-Up</a>
+          <a href="https://www.fairspinedigital.com/website-brief.html"><span class="dd-icon">&#128187;</span> Briefing a Website Designer</a>
+          <div class="dropdown-divider"></div>
+          <a href="/insights"><span class="dd-icon">&#128214;</span> View all insights</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="/careers">Careers <span class="caret"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">Open roles</div>
+          <a href="/careers"><span class="dd-icon">&#128241;</span> Social Media Manager</a>
+          <a href="/careers"><span class="dd-icon">&#128269;</span> SEO Strategist</a>
+          <a href="/careers"><span class="dd-icon">&#128202;</span> Tracking &amp; Analytics Specialist</a>
+          <div class="dropdown-divider"></div>
+          <a href="careers.html#apply-form"><span class="dd-icon">&#10024;</span> Apply now</a>
+        </div>
+      </li>
     </ul>
     <div style="display:flex;align-items:center;gap:0.75rem;">
       <button class="search-btn" onclick="openSearch()" aria-label="Search">
@@ -113,8 +92,7 @@
       <span></span><span></span><span></span>
     </button>
     </div>
-  </div>
-</nav>
+  </div></nav><!-- MOBILE DRAWER -->
 <div class="mobile-drawer" aria-hidden="true" id="mobileDrawer">
   <a href="/">Home</a>
   <a href="/about">Approach</a>
@@ -131,6 +109,9 @@
   </div>
 </div>
 
+
+
+<!-- SEARCH OVERLAY -->
 <div class="search-overlay" id="searchOverlay">
   <button class="search-close" onclick="closeSearch()">&#10005;</button>
   <div class="search-box">
@@ -145,7 +126,6 @@
   <h1>Our <span>Services.</span></h1>
   <p>Nine channels. One team. We plan, build, and run the digital presence that moves your audience from awareness to pipeline.</p>
 </div>
-
 <section class="section">
   <div class="section-inner">
     <div class="section-tag">Full-funnel services</div>
@@ -165,125 +145,28 @@
     </div>
   </div>
 </section>
-
-<!-- PLATFORMS TICKER -->
-<div class="platform-ticker-wrap">
-  <p class="platform-ticker-label">Platforms we run campaigns on</p>
-  <div class="platform-ticker">
-    <div class="platform-track">
-
-      <!-- Google Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        Google Ads
-      </span>
-
-      <!-- Meta Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" fill="#1877F2"/></svg>
-        Meta Ads
-      </span>
-
-      <!-- TikTok Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" fill="#000"/></svg>
-        TikTok Ads
-      </span>
-
-      <!-- LinkedIn Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/></svg>
-        LinkedIn Ads
-      </span>
-
-      <!-- X Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="#000"/></svg>
-        X Ads
-      </span>
-
-      <!-- Microsoft Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.4 2H2v9.4h9.4V2z" fill="#F25022"/><path d="M22 2h-9.4v9.4H22V2z" fill="#7FBA00"/><path d="M11.4 12.6H2V22h9.4v-9.4z" fill="#00A4EF"/><path d="M22 12.6h-9.4V22H22v-9.4z" fill="#FFB900"/></svg>
-        Microsoft Ads
-      </span>
-
-      <!-- Reddit Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" fill="#FF4500"/></svg>
-        Reddit Ads
-      </span>
-
-      <!-- Amazon Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.958 10.09c0 1.232.029 2.256-.59 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.698-3.182v.685zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.234-1.276-1.814-2.106-1.734 1.767-2.962 2.297-5.209 2.297-2.66 0-4.731-1.641-4.731-4.927 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.891 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.818-1.775-.818-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.333c-.259-.056-.548-.266-.472-.66C5.57 2.507 8.418 1.5 10.941 1.5c1.286 0 2.969.343 3.983 1.318 1.287 1.201 1.163 2.801 1.163 4.543v4.112c0 1.236.513 1.779 .996 2.446.17.239.207.525-.008.701l-1.932 1.675zm3.674 1.38C18.525 21.394 15.343 23 12.002 23 7.343 23 3.185 21.076 .188 17.89c-.245-.277-.026-.654.297-.44 3.218 1.874 6.818 3 10.65 3 2.61 0 5.48-.541 8.121-1.66.398-.17.733.26.362.585zm1.047-1.19c-.334-.429-2.209-.203-3.053-.102-.255.031-.295-.192-.064-.353 1.494-1.051 3.946-.748 4.233-.396.286.355-.075 2.81-1.479 3.982-.215.181-.42.084-.325-.153.316-.79 1.022-2.55.688-2.978z" fill="#FF9900"/></svg>
-        Amazon Ads
-      </span>
-
-      <!-- Apple Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701" fill="#000"/></svg>
-        Apple Ads
-      </span>
-
-      <!-- WhatsApp Ads -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#25D366"/></svg>
-        WhatsApp Ads
-      </span>
-
-      <!-- DUPLICATE SET for seamless loop -->
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        Google Ads
-      </span>
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" fill="#1877F2"/></svg>
-        Meta Ads
-      </span>
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" fill="#000"/></svg>
-        TikTok Ads
-      </span>
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/></svg>
-        LinkedIn Ads
-      </span>
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="#000"/></svg>
-        X Ads
-      </span>
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.4 2H2v9.4h9.4V2z" fill="#F25022"/><path d="M22 2h-9.4v9.4H22V2z" fill="#7FBA00"/><path d="M11.4 12.6H2V22h9.4v-9.4z" fill="#00A4EF"/><path d="M22 12.6h-9.4V22H22v-9.4z" fill="#FFB900"/></svg>
-        Microsoft Ads
-      </span>
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" fill="#FF4500"/></svg>
-        Reddit Ads
-      </span>
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.958 10.09c0 1.232.029 2.256-.59 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.698-3.182v.685zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.234-1.276-1.814-2.106-1.734 1.767-2.962 2.297-5.209 2.297-2.66 0-4.731-1.641-4.731-4.927 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.891 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.818-1.775-.818-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.333c-.259-.056-.548-.266-.472-.66C5.57 2.507 8.418 1.5 10.941 1.5c1.286 0 2.969.343 3.983 1.318 1.287 1.201 1.163 2.801 1.163 4.543v4.112c0 1.236.513 1.779.996 2.446.17.239.207.525-.008.701l-1.932 1.675zm3.674 1.38C18.525 21.394 15.343 23 12.002 23 7.343 23 3.185 21.076.188 17.89c-.245-.277-.026-.654.297-.44 3.218 1.874 6.818 3 10.65 3 2.61 0 5.48-.541 8.121-1.66.398-.17.733.26.362.585zm1.047-1.19c-.334-.429-2.209-.203-3.053-.102-.255.031-.295-.192-.064-.353 1.494-1.051 3.946-.748 4.233-.396.286.355-.075 2.81-1.479 3.982-.215.181-.42.084-.325-.153.316-.79 1.022-2.55.688-2.978z" fill="#FF9900"/></svg>
-        Amazon Ads
-      </span>
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701" fill="#000"/></svg>
-        Apple Search Ads
-      </span>
-      <span class="platform-pill">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#25D366"/></svg>
-        WhatsApp Ads
-      </span>
-
+<section class="section" style="background:var(--offwhite);padding:4rem 2rem;">
+  <div class="section-inner" style="text-align:center;">
+    <p style="font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-500);margin-bottom:2rem;">Platforms we run campaigns on</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#127758; Google Ads</span>
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#128276; Microsoft Ads</span>
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#9654;&#65039; TikTok Ads</span>
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#10005; X Ads</span>
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#128100; Meta Ads</span>
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#128172; WhatsApp Ads</span>
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#128101; Reddit Ads</span>
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#128230; Amazon Ads</span>
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#63743; Apple Ads</span>
+      <span style="display:flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--gray-100);border-radius:50px;padding:0.45rem 1rem;font-size:0.82rem;font-weight:500;color:var(--gray-700);">&#128188; LinkedIn Ads</span>
     </div>
   </div>
-</div>
-
+</section>
 <section class="cta-section">
   <h2>Not sure which services you need?</h2>
   <p>Start with a 60-day pilot and we'll map the right mix for your brand.</p>
   <a href="/pilot" class="btn btn-dark" style="font-size:1rem;padding:0.85rem 2.2rem;">See the 60-day pilot &#8594;</a>
 </section>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -321,88 +204,153 @@
         </ul>
       </div>
     </div>
+
+    <!-- OFFICES TICKER -->
     <div style="overflow:hidden;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:0.85rem 0;margin-bottom:2rem;position:relative;">
       <div style="position:absolute;left:0;top:0;bottom:0;width:60px;background:linear-gradient(to right,var(--navy),transparent);z-index:2;pointer-events:none;"></div>
       <div style="position:absolute;right:0;top:0;bottom:0;width:60px;background:linear-gradient(to left,var(--navy),transparent);z-index:2;pointer-events:none;"></div>
-      <div class="offices-ticker"><div class="offices-track">
-        <span class="office-item">&#128205; <strong>London</strong> &nbsp; United Kingdom</span><span class="office-sep">&#10022;</span>
-        <span class="office-item">&#128205; <strong>Cape Town</strong> &nbsp; South Africa</span><span class="office-sep">&#10022;</span>
-        <span class="office-item">&#128205; <strong>Nairobi</strong> &nbsp; Kenya</span><span class="office-sep">&#10022;</span>
-        <span class="office-item">&#128205; <strong>Harare</strong> &nbsp; Zimbabwe</span><span class="office-sep">&#10022;</span>
-        <span class="office-item">&#128205; <strong>Lusaka</strong> &nbsp; Zambia</span><span class="office-sep">&#10022;</span>
-        <span class="office-item">&#128205; <strong>London</strong> &nbsp; United Kingdom</span><span class="office-sep">&#10022;</span>
-        <span class="office-item">&#128205; <strong>Cape Town</strong> &nbsp; South Africa</span><span class="office-sep">&#10022;</span>
-        <span class="office-item">&#128205; <strong>Nairobi</strong> &nbsp; Kenya</span><span class="office-sep">&#10022;</span>
-        <span class="office-item">&#128205; <strong>Harare</strong> &nbsp; Zimbabwe</span><span class="office-sep">&#10022;</span>
-        <span class="office-item">&#128205; <strong>Lusaka</strong> &nbsp; Zambia</span><span class="office-sep">&#10022;</span>
-      </div></div>
+      <div class="offices-ticker">
+        <div class="offices-track">
+          <span class="office-item">&#128205; <strong>London</strong> &nbsp; United Kingdom</span>
+          <span class="office-sep">&#10022;</span>
+          <span class="office-item">&#128205; <strong>Cape Town</strong> &nbsp; South Africa</span>
+          <span class="office-sep">&#10022;</span>
+          <span class="office-item">&#128205; <strong>Nairobi</strong> &nbsp; Kenya</span>
+          <span class="office-sep">&#10022;</span>
+          <span class="office-item">&#128205; <strong>Harare</strong> &nbsp; Zimbabwe</span>
+          <span class="office-sep">&#10022;</span>
+          <span class="office-item">&#128205; <strong>Lusaka</strong> &nbsp; Zambia</span>
+          <span class="office-sep">&#10022;</span>
+          <!-- duplicate for seamless loop -->
+          <span class="office-item">&#128205; <strong>London</strong> &nbsp; United Kingdom</span>
+          <span class="office-sep">&#10022;</span>
+          <span class="office-item">&#128205; <strong>Cape Town</strong> &nbsp; South Africa</span>
+          <span class="office-sep">&#10022;</span>
+          <span class="office-item">&#128205; <strong>Nairobi</strong> &nbsp; Kenya</span>
+          <span class="office-sep">&#10022;</span>
+          <span class="office-item">&#128205; <strong>Harare</strong> &nbsp; Zimbabwe</span>
+          <span class="office-sep">&#10022;</span>
+          <span class="office-item">&#128205; <strong>Lusaka</strong> &nbsp; Zambia</span>
+          <span class="office-sep">&#10022;</span>
+        </div>
+      </div>
     </div>
     <div class="footer-follow" style="padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:2rem;">
       <p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.35);margin-bottom:1rem;">Follow us</p>
       <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+
+        <!-- Facebook -->
         <a href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50px;padding:0.45rem 1rem;color:rgba(255,255,255,0.7);font-size:0.82rem;font-weight:500;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#1877F2';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.7)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           Facebook
         </a>
+
+        <!-- Instagram -->
         <a href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50px;padding:0.45rem 1rem;color:rgba(255,255,255,0.7);font-size:0.82rem;font-weight:500;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#E1306C';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.7)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="url(#ig-grad2)"><defs><linearGradient id="ig-grad2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="url(#ig-grad)" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           Instagram
         </a>
+
+        <!-- LinkedIn -->
         <a href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50px;padding:0.45rem 1rem;color:rgba(255,255,255,0.7);font-size:0.82rem;font-weight:500;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#0A66C2';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.7)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
+
+        <!-- X / Twitter -->
         <a href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50px;padding:0.45rem 1rem;color:rgba(255,255,255,0.7);font-size:0.82rem;font-weight:500;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#fff';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.7)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           X
         </a>
+
       </div>
     </div>
     <div class="footer-bottom">
       <span>&#169; 2026 Fairspine Digital. All rights reserved.</span>
+      <a href="/privacy-policy" id="pp-link" style="color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;transition:color 0.2s;">Privacy Policy</a>
     </div>
   </div>
 </footer>
 <div id="cursor-glow"></div>
 <script>
+// Search data index
 var PAGES = [
-  {url:'/', tag:'Home', title:'Home', desc:'Full-funnel digital marketing that grows your brand and your pipeline.'},
-  {url:'/about', tag:'Approach', title:'Our Approach', desc:'Strategy-first, data-driven. Four steps: audit, strategy, execute, track.'},
-  {url:'/services', tag:'Services', title:'Social Media Marketing', desc:'Content calendars, creative and community management across your key platforms.'},
-  {url:'/services', tag:'Services', title:'Search Engine Optimisation', desc:'Technical fixes and a content plan built around what your customers search for.'},
-  {url:'/services', tag:'Services', title:'Website Design', desc:'Fast, mobile-friendly sites built to convert visitors into leads.'},
-  {url:'/services', tag:'Services', title:'Graphic & Motion Design', desc:'Brand assets, social templates and short-form video edits.'},
-  {url:'/services', tag:'Services', title:'PPC Advertising', desc:'Paid campaigns on Google and Meta that convert clicks into leads.'},
-  {url:'/services', tag:'Services', title:'Email Marketing', desc:'Automated sequences that nurture your list from contact to customer.'},
-  {url:'/services', tag:'Services', title:'Tracking & Analytics', desc:'GA4, Meta Pixel, GTM and custom dashboards — clean data for every decision.'},
-  {url:'/services', tag:'Services', title:'Content Marketing', desc:'Blog posts and guides that build authority and bring organic traffic.'},
-  {url:'/services', tag:'Services', title:'Outbound Marketing', desc:'Prospecting sequences that build your pipeline before leads come looking.'},
-  {url:'/google-business-profile', tag:'Insights', title:'Google Business Profile', desc:'Your GBP is doing more work than your website for local visibility.'},
-  {url:'/social-tune-up', tag:'Insights', title:'Social content tune-up', desc:'Three signs your social content has drifted out of sync.'},
-  {url:'/website-brief', tag:'Insights', title:'Briefing a website designer', desc:'A short guide to writing a clear, effective website brief.'},
-  {url:'/careers', tag:'Careers', title:'Social Media Manager', desc:'Remote · Full-time · Africa or Europe'},
-  {url:'/careers', tag:'Careers', title:'Paid Media Specialist', desc:'Remote · Full-time · Global'},
-  {url:'/careers', tag:'Careers', title:'SEO Strategist', desc:'Remote · Part-time or Full-time · Global'},
-  {url:'/careers', tag:'Careers', title:'Account Manager', desc:'Remote · Full-time · Africa or Europe'},
-  {url:'/contact', tag:'Contact', title:'Get in touch', desc:'Email, WhatsApp or fill in our contact form — we reply within one business day.'},
-  {url:'/regions', tag:'Regions', title:'EMEA', desc:'Europe, Middle East & Africa — UK, EU, UAE, South Africa, Nigeria, Kenya.'},
-  {url:'/regions', tag:'Regions', title:'APAC', desc:'Asia Pacific — Australia, Singapore, India, Japan, SEA.'},
-  {url:'/regions', tag:'Regions', title:'AMER', desc:'The Americas — USA, Canada, Brazil, Mexico, LATAM.'},
-  {url:'/regions', tag:'Regions', title:'MENA', desc:'Middle East & North Africa — Saudi Arabia, UAE, Egypt, Qatar.'},
-  {url:'/regions', tag:'Regions', title:'SSA', desc:'Sub-Saharan Africa — South Africa, Nigeria, Kenya, Ghana, Zimbabwe, Zambia.'},
+  {url:'index.html', tag:'Home', title:'Home', desc:'Full-funnel digital marketing that grows your brand and your pipeline.'},
+  {url:'about.html', tag:'Approach', title:'Our Approach', desc:'Strategy-first, data-driven. Four steps: audit, strategy, execute, track.'},
+  {url:'services.html', tag:'Services', title:'Social Media Marketing', desc:'Content calendars, creative and community management across your key platforms.'},
+  {url:'services.html', tag:'Services', title:'Search Engine Optimisation', desc:'Technical fixes and a content plan built around what your customers search for.'},
+  {url:'services.html', tag:'Services', title:'Website Design', desc:'Fast, mobile-friendly sites built to convert visitors into leads.'},
+  {url:'services.html', tag:'Services', title:'Graphic & Motion Design', desc:'Brand assets, social templates and short-form video edits.'},
+  {url:'services.html', tag:'Services', title:'PPC Advertising', desc:'Paid campaigns on Google and Meta that convert clicks into leads.'},
+  {url:'services.html', tag:'Services', title:'Email Marketing', desc:'Automated sequences that nurture your list from contact to customer.'},
+  {url:'services.html', tag:'Services', title:'Tracking & Analytics', desc:'GA4, Meta Pixel, GTM and custom dashboards — clean data for every decision.'},
+  {url:'services.html', tag:'Services', title:'Content Marketing', desc:'Blog posts and guides that build authority and bring organic traffic.'},
+  {url:'services.html', tag:'Services', title:'Outbound Marketing', desc:'Prospecting sequences that build your pipeline before leads come looking.'},
+  {url:'insights.html', tag:'Insights', title:'Google Business Profile', desc:'Your GBP is doing more work than your website for local visibility.'},
+  {url:'insights.html', tag:'Insights', title:'Social content tune-up', desc:'Three signs your social content has drifted out of sync.'},
+  {url:'insights.html', tag:'Insights', title:'Briefing a website designer', desc:'A short guide to writing a clear, effective website brief.'},
+  {url:'careers.html', tag:'Careers', title:'Social Media Manager', desc:'Remote · Full-time · Africa or Europe'},
+  {url:'careers.html', tag:'Careers', title:'Paid Media Specialist', desc:'Remote · Full-time · Global'},
+  {url:'careers.html', tag:'Careers', title:'SEO Strategist', desc:'Remote · Part-time or Full-time · Global'},
+  {url:'careers.html', tag:'Careers', title:'Account Manager', desc:'Remote · Full-time · Africa or Europe'},
+  {url:'contact.html', tag:'Contact', title:'Get in touch', desc:'Email, WhatsApp or fill in our contact form — we reply within one business day.'},
+  {url:'regions.html', tag:'Regions', title:'EMEA', desc:'Europe, Middle East & Africa — UK, EU, UAE, South Africa, Nigeria, Kenya.'},
+  {url:'regions.html', tag:'Regions', title:'APAC', desc:'Asia Pacific — Australia, Singapore, India, Japan, SEA.'},
+  {url:'regions.html', tag:'Regions', title:'AMER', desc:'The Americas — USA, Canada, Brazil, Mexico, LATAM.'},
+  {url:'regions.html', tag:'Regions', title:'MENA', desc:'Middle East & North Africa — Saudi Arabia, UAE, Egypt, Qatar.'},
+  {url:'regions.html', tag:'Regions', title:'SSA', desc:'Sub-Saharan Africa — South Africa, Nigeria, Kenya, Ghana, Zimbabwe, Zambia.'},
 ];
-function openSearch(){document.getElementById('searchOverlay').classList.add('open');setTimeout(function(){document.getElementById('searchInput').focus();},80);}
-function closeSearch(){document.getElementById('searchOverlay').classList.remove('open');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='';}
+
+function openSearch(){
+  document.getElementById('searchOverlay').classList.add('open');
+  setTimeout(function(){document.getElementById('searchInput').focus();},80);
+}
+function closeSearch(){
+  document.getElementById('searchOverlay').classList.remove('open');
+  document.getElementById('searchInput').value='';
+  document.getElementById('searchResults').innerHTML='';
+}
 document.addEventListener('keydown',function(e){if(e.key==='/'&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA'){e.preventDefault();openSearch();}if(e.key==='Escape')closeSearch();});
-function runSearch(q){var el=document.getElementById('searchResults');if(!q||q.trim().length<2){el.innerHTML='';return;}var t=q.toLowerCase();var hits=PAGES.filter(function(p){return p.title.toLowerCase().includes(t)||p.desc.toLowerCase().includes(t)||p.tag.toLowerCase().includes(t);});if(!hits.length){el.innerHTML='<div class="search-no-results">No results for <strong style=\'color:#fff;\'>'+q+'</strong></div>';return;}el.innerHTML=hits.slice(0,8).map(function(p){return '<a class="search-result-item" href="'+p.url+'"><div class="r-tag">'+p.tag+'</div><div class="r-title">'+p.title+'</div><div class="r-desc">'+p.desc+'</div></a>';}).join('');}
+function runSearch(q){
+  var el=document.getElementById('searchResults');
+  if(!q||q.trim().length<2){el.innerHTML='';return;}
+  var t=q.toLowerCase();
+  var hits=PAGES.filter(function(p){return p.title.toLowerCase().includes(t)||p.desc.toLowerCase().includes(t)||p.tag.toLowerCase().includes(t);});
+  if(!hits.length){el.innerHTML='<div class="search-no-results">No results for <strong style=\'color:#fff;\'>'+q+'</strong></div>';return;}
+  el.innerHTML=hits.slice(0,8).map(function(p){
+    return '<a class="search-result-item" href="'+p.url+'"><div class="r-tag">'+p.tag+'</div><div class="r-title">'+p.title+'</div><div class="r-desc">'+p.desc+'</div></a>';
+  }).join('');
+}
+// Cursor glow
 (function(){var g=document.getElementById('cursor-glow');if(!g)return;document.addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';});})();
-(function(){document.querySelectorAll('.section-tag,.section-title,.section-sub').forEach(function(el){el.classList.add('reveal');});document.querySelectorAll('.service-card,.job-card,.how-step,.pv-card').forEach(function(el,i){el.classList.add('reveal');el.classList.add('delay-'+((i%6)+1));});var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.1});document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){io.observe(el);});})();
-(function(){var p=window.location.pathname;document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});})();
+// Scroll reveal
+(function(){
+  document.querySelectorAll('.section-tag,.section-title,.section-sub').forEach(function(el){el.classList.add('reveal');});
+  document.querySelectorAll('.service-card,.job-card,.how-step,.pv-card').forEach(function(el,i){el.classList.add('reveal');el.classList.add('delay-'+((i%6)+1));});
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.1});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){io.observe(el);});
+})();
+// Active nav
+(function(){
+  var p=window.location.pathname.split('/').pop()||'index.html';
+  document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')===p)a.classList.add('active');});
+})();
 </script>
 <script>
-function toggleDrawer(){var d=document.getElementById('mobileDrawer');var h=document.getElementById('navHamburger');var open=d.classList.toggle('open');h.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';}
-function closeDrawer(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('navHamburger').classList.remove('open');document.body.style.overflow='';}
-window.addEventListener('resize',function(){if(window.innerWidth>768)closeDrawer();});
+function toggleDrawer() {
+  var d = document.getElementById('mobileDrawer');
+  var h = document.getElementById('navHamburger');
+  var open = d.classList.toggle('open');
+  h.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeDrawer() {
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close drawer on resize to desktop
+window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeDrawer(); });
 </script>
 </body>
 </html>

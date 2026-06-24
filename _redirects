@@ -1,20 +1,14 @@
-/about          /about/index.html                200
-/services       /services/index.html             200
-/insights       /insights/index.html             200
-/contact        /contact/index.html              200
-/careers        /careers/index.html              200
-/pilot          /pilot/index.html                200
-/regions        /regions/index.html              200
-/broadcast      /broadcast/index.html            200
-/google-business-profile  /google-business-profile/index.html  200
-/social-tune-up           /social-tune-up/index.html           200
-/website-brief            /website-brief/index.html            200
-/privacy-policy           /privacy-policy/index.html           200
+/about          /about/index.html        200
+/services       /services/index.html     200
+/insights       /insights/index.html     200
+/contact        /contact/index.html      200
+/careers        /careers/index.html      200
+/pilot          /pilot/index.html        200
+/regions        /regions/index.html      200
+/broadcast      /broadcast/index.html    200
 
-# Redirect old .html URLs to clean versions
-/index.html     /                   301
-/about.html     /about              301
-/services.html  /services           301
-/insights.html  /insights           301
-/contact.html   /contact            301
-/careers.html   /careers            301
+/about.html     /about                   301
+/services.html  /services                301
+/insights.html  /insights                301
+/contact.html   /contact                 301
+/careers.html   /careers                 301
