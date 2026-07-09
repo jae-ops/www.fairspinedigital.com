@@ -5,6 +5,8 @@ import re
 REPLACEMENTS = {
     'href="style.css"': 'href="/style.css"',
     'href="./style.css"': 'href="/style.css"',
+    'href="styles.css"': 'href="/style.css"',
+    'href="./styles.css"': 'href="/style.css"',
     'src="script.js"': 'src="/script.js"',
     'src="./script.js"': 'src="/script.js"',
     'src="effects.js"': 'src="/effects.js"',
