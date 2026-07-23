@@ -14,6 +14,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(13,27,42,0.97); b
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 68px; display: flex; align-items: center; justify-content: space-between; }
 .logo { display: flex; align-items: center; gap: 12px; color: var(--white); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
 .windmill-logo { width: 48px; height: 48px; flex-shrink: 0; }
+img.windmill-logo { width: auto; object-fit: contain; }
 .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
 .nav-links a { color: rgba(255,255,255,0.65); font-size: 0.9rem; font-weight: 400; transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--teal); }
@@ -452,6 +453,7 @@ html, body { overflow-x: hidden; }
   /* NAV */
   .logo { font-size: 0.95rem; }
   .windmill-logo { width: 32px !important; height: 32px !important; }
+  img.windmill-logo { width: auto !important; }
 
   /* HERO */
   .page-hero { padding: 2.5rem 1rem 2.25rem !important; }
