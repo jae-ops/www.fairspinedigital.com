@@ -91,8 +91,9 @@
   </div>
 </div>
 
-<section class="industries-trust">
-  <div class="industries-trust__inner">
+<section class="industries-trust" style="background:var(--navy);padding:6rem 2rem;text-align:center;position:relative;overflow:hidden;">
+  <div class="industries-trust__bubble" aria-hidden="true"></div>
+  <div class="industries-trust__inner" style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;">
     <svg width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1.25rem;">
       <path d="M16.5 22 L15 34 L21 34 L19.5 22 Z" fill="#1EB882"/>
       <path d="M18 20 L12 8 Q11 6 13 7 L18 17.5 Z" fill="#1EB882" opacity="0.9"/>
@@ -102,11 +103,11 @@
       <circle cx="18" cy="20" r="2.5" fill="#ffffff"/>
       <circle cx="18" cy="20" r="1.5" fill="#0D1B2A"/>
     </svg>
-    <p class="industries-trust__eyebrow">Fairspine Digital is trusted by</p>
-    <div class="industries-trust__rotator" id="industryRotator" aria-live="polite">
+    <p class="industries-trust__eyebrow" style="font-size:0.9rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem;">Fairspine Digital is trusted by</p>
+    <div class="industries-trust__rotator" id="industryRotator" aria-live="polite" style="position:relative;height:clamp(3rem,8vw,5.5rem);display:flex;align-items:center;justify-content:center;width:100%;overflow:hidden;margin-bottom:1.5rem;">
       <span class="industries-trust__word is-active">Local home services</span>
     </div>
-    <p class="industries-trust__sub">From service businesses to SaaS brands, we build and run the channels that turn attention into pipeline — no matter your industry.</p>
+    <p class="industries-trust__sub" style="font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.7;max-width:560px;">From demandgen to leadgen, we build, manage and run the channels that turn attention into pipeline — no matter the industry.</p>
   </div>
 </section>
 
@@ -338,6 +339,8 @@ window.addEventListener('resize',function(){if(window.innerWidth>768)closeDrawer
     'Local home services',
     'Healthcare & med spas',
     'Real estate & property',
+    'Mining & metals',
+    'Sports & Events',
     'E-commerce & DTC brands',
     'Fitness & wellness studios',
     'Legal services',
@@ -348,12 +351,7 @@ window.addEventListener('resize',function(){if(window.innerWidth>768)closeDrawer
     'Automotive',
     'Education & tutoring',
     'Pet services',
-    'Recurring home services',
-    'Mining & metals',
-    'Education',
-    'Sports',
-    'Events',
-    'Tourism'
+    'Recurring home services'
   ];
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
