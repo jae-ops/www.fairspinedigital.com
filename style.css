@@ -871,6 +871,69 @@ nav ~ .mobile-drawer ~ * { margin-top: 0 !important; }
   }
 }
 
+/* Industries trust rotator */
+.industries-trust {
+  background: var(--navy);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.industries-trust__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.industries-trust__eyebrow {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+.industries-trust__rotator {
+  position: relative;
+  height: clamp(3rem, 8vw, 5.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.industries-trust__word {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.8rem, 5.5vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--teal);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  white-space: nowrap;
+}
+.industries-trust__word.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.industries-trust__word.is-leaving {
+  opacity: 0;
+  transform: translateY(-24px);
+}
+.industries-trust__sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 560px;
+}
+@media (max-width: 480px) {
+  .industries-trust__word { white-space: normal; }
+}
+
 /* Hero headline typewriter effect */
 .page-hero h1.th-typing::after {
   content: '|';

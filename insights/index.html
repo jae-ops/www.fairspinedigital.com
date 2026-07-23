@@ -288,7 +288,7 @@ window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeD
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
 
-  var SPEED = 40; // ms per character
+  var SPEED = 70; // ms per character
 
   document.querySelectorAll('.page-hero h1').forEach(function (h1) {
     if (!h1.dataset.original) h1.dataset.original = h1.innerHTML;

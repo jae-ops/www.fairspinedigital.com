@@ -90,6 +90,26 @@
     <div class="stat-item"><div class="num">60</div><div class="label">Day pilot available</div></div>
   </div>
 </div>
+
+<section class="industries-trust">
+  <div class="industries-trust__inner">
+    <svg width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1.25rem;">
+      <path d="M16.5 22 L15 34 L21 34 L19.5 22 Z" fill="#1EB882"/>
+      <path d="M18 20 L12 8 Q11 6 13 7 L18 17.5 Z" fill="#1EB882" opacity="0.9"/>
+      <path d="M18 20 L30 16 Q32 15.5 31 17.5 L18.5 20.5 Z" fill="#1EB882" opacity="0.7"/>
+      <path d="M18 20 L24 32 Q25 34 23 33 L17.5 22.5 Z" fill="#1EB882" opacity="0.55"/>
+      <path d="M18 20 L6 24 Q4 24.5 5 22.5 L17.5 19.5 Z" fill="#1EB882" opacity="0.4"/>
+      <circle cx="18" cy="20" r="2.5" fill="#ffffff"/>
+      <circle cx="18" cy="20" r="1.5" fill="#0D1B2A"/>
+    </svg>
+    <p class="industries-trust__eyebrow">Fairspine Digital is trusted by</p>
+    <div class="industries-trust__rotator" id="industryRotator" aria-live="polite">
+      <span class="industries-trust__word is-active">Local home services</span>
+    </div>
+    <p class="industries-trust__sub">From service businesses to SaaS brands, we build and run the channels that turn attention into pipeline — no matter your industry.</p>
+  </div>
+</section>
+
 <div style="background:var(--offwhite);padding:4.5rem 2rem;">
   <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
     <div class="reveal-left">
@@ -261,7 +281,7 @@ window.addEventListener('resize',function(){if(window.innerWidth>768)closeDrawer
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
 
-  var SPEED = 40; // ms per character
+  var SPEED = 70; // ms per character
 
   document.querySelectorAll('.page-hero h1').forEach(function (h1) {
     if (!h1.dataset.original) h1.dataset.original = h1.innerHTML;
@@ -305,6 +325,72 @@ window.addEventListener('resize',function(){if(window.innerWidth>768)closeDrawer
 
     io.observe(h1);
   });
+})();
+</script>
+
+<script>
+// Industries trust rotator
+(function () {
+  var el = document.getElementById('industryRotator');
+  if (!el) return;
+
+  var industries = [
+    'Local home services',
+    'Healthcare & med spas',
+    'Real estate & property',
+    'E-commerce & DTC brands',
+    'Fitness & wellness studios',
+    'Legal services',
+    'Restaurants & hospitality',
+    'Home renovation & contractors',
+    'B2B SaaS & tech services',
+    'Financial & insurance services',
+    'Automotive',
+    'Education & tutoring',
+    'Pet services',
+    'Recurring home services',
+    'Mining & metals',
+    'Education',
+    'Sports',
+    'Events',
+    'Tourism'
+  ];
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var i = 0;
+  var current = document.createElement('span');
+  current.className = 'industries-trust__word is-active';
+  current.textContent = industries[0];
+  el.innerHTML = '';
+  el.appendChild(current);
+
+  if (reduceMotion) return;
+
+  var HOLD = 1900;   // how long each word stays fully visible
+  var TRANSITION = 450; // must match CSS transition duration
+
+  function next() {
+    i = (i + 1) % industries.length;
+
+    var incoming = document.createElement('span');
+    incoming.className = 'industries-trust__word';
+    incoming.textContent = industries[i];
+    el.appendChild(incoming);
+
+    // force layout so the transition actually runs
+    void incoming.offsetWidth;
+
+    current.classList.remove('is-active');
+    current.classList.add('is-leaving');
+    incoming.classList.add('is-active');
+
+    setTimeout(function () {
+      if (current && current.parentNode) current.parentNode.removeChild(current);
+      current = incoming;
+    }, TRANSITION);
+  }
+
+  setInterval(next, HOLD + TRANSITION);
 })();
 </script>
 </body>
