@@ -91,26 +91,6 @@
   </div>
 </div>
 
-<section class="industries-trust" style="background:var(--navy);padding:6rem 2rem;text-align:center;position:relative;overflow:hidden;">
-  <div class="industries-trust__bubble" aria-hidden="true"></div>
-  <div class="industries-trust__inner" style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;">
-    <svg width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1.25rem;">
-      <path d="M16.5 22 L15 34 L21 34 L19.5 22 Z" fill="#1EB882"/>
-      <path d="M18 20 L12 8 Q11 6 13 7 L18 17.5 Z" fill="#1EB882" opacity="0.9"/>
-      <path d="M18 20 L30 16 Q32 15.5 31 17.5 L18.5 20.5 Z" fill="#1EB882" opacity="0.7"/>
-      <path d="M18 20 L24 32 Q25 34 23 33 L17.5 22.5 Z" fill="#1EB882" opacity="0.55"/>
-      <path d="M18 20 L6 24 Q4 24.5 5 22.5 L17.5 19.5 Z" fill="#1EB882" opacity="0.4"/>
-      <circle cx="18" cy="20" r="2.5" fill="#ffffff"/>
-      <circle cx="18" cy="20" r="1.5" fill="#0D1B2A"/>
-    </svg>
-    <p class="industries-trust__eyebrow" style="font-size:0.9rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem;">Fairspine Digital is trusted by</p>
-    <div class="industries-trust__rotator" id="industryRotator" aria-live="polite" style="position:relative;height:clamp(3rem,8vw,5.5rem);display:flex;align-items:center;justify-content:center;width:100%;overflow:hidden;margin-bottom:1.5rem;">
-      <span class="industries-trust__word is-active">Local home services</span>
-    </div>
-    <p class="industries-trust__sub" style="font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.7;max-width:560px;">From demandgen to leadgen, we build, manage and run the channels that turn attention into pipeline — no matter the industry.</p>
-  </div>
-</section>
-
 <div style="background:var(--offwhite);padding:4.5rem 2rem;">
   <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
     <div class="reveal-left">
@@ -146,6 +126,19 @@
     <div style="margin-top:2rem;text-align:center;"><a href="/services" class="btn btn-dark">View all 9 services &#8594;</a></div>
   </div>
 </section>
+
+<section class="industries-trust" style="background:var(--navy);padding:6rem 2rem;text-align:center;position:relative;overflow:hidden;">
+  <div class="industries-trust__bubble" aria-hidden="true"></div>
+  <div class="industries-trust__inner" style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;">
+    <img src="/fairspine-mark-white.svg" alt="Fairspine Digital" style="width:52px;height:52px;margin-bottom:1.5rem;"/>
+    <p class="industries-trust__eyebrow" style="font-size:clamp(1.2rem,2.8vw,1.6rem);font-weight:700;color:#fff;letter-spacing:0.02em;margin-bottom:1.25rem;">Fairspine Digital is trusted by</p>
+    <div class="industries-trust__rotator" id="industryRotator" aria-live="polite" style="position:relative;height:clamp(3rem,8vw,5.5rem);display:flex;align-items:center;justify-content:center;width:100%;overflow:hidden;margin-bottom:1.5rem;">
+      <span class="industries-trust__word is-active" style="position:static;opacity:1;transform:none;font-family:Sora,sans-serif;font-size:clamp(1.8rem,5.5vw,3.4rem);font-weight:700;letter-spacing:-0.02em;color:#1EB882;">Local home services</span>
+    </div>
+    <p class="industries-trust__sub" style="font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.7;max-width:560px;">From demandgen to leadgen, we build, manage and run the channels that turn attention into pipeline — no matter the industry.</p>
+  </div>
+</section>
+
 <section class="cta-section">
   <h2>Ready to grow your brand and your pipeline?</h2>
   <p>Tell us about your business. We'll come back with a clear starting point.</p>
@@ -354,32 +347,43 @@ window.addEventListener('resize',function(){if(window.innerWidth>768)closeDrawer
     'Recurring home services'
   ];
 
+  var BASE_STYLE = 'position:absolute;left:0;right:0;font-family:Sora,sans-serif;font-size:clamp(1.8rem,5.5vw,3.4rem);font-weight:700;letter-spacing:-0.02em;color:#1EB882;white-space:nowrap;transition:opacity 0.45s ease, transform 0.45s ease;';
+
+  function makeSpan(text, visible) {
+    var span = document.createElement('span');
+    span.className = 'industries-trust__word' + (visible ? ' is-active' : '');
+    span.textContent = text;
+    span.style.cssText = BASE_STYLE + (visible ? 'opacity:1;transform:translateY(0);' : 'opacity:0;transform:translateY(24px);');
+    return span;
+  }
+
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var i = 0;
-  var current = document.createElement('span');
-  current.className = 'industries-trust__word is-active';
-  current.textContent = industries[0];
+  var current = makeSpan(industries[0], true);
   el.innerHTML = '';
   el.appendChild(current);
 
   if (reduceMotion) return;
 
   var HOLD = 1900;   // how long each word stays fully visible
-  var TRANSITION = 450; // must match CSS transition duration
+  var TRANSITION = 450; // must match the transition duration above
 
   function next() {
     i = (i + 1) % industries.length;
 
-    var incoming = document.createElement('span');
-    incoming.className = 'industries-trust__word';
-    incoming.textContent = industries[i];
+    var incoming = makeSpan(industries[i], false);
     el.appendChild(incoming);
 
     // force layout so the transition actually runs
     void incoming.offsetWidth;
 
+    current.style.opacity = '0';
+    current.style.transform = 'translateY(-24px)';
     current.classList.remove('is-active');
     current.classList.add('is-leaving');
+
+    incoming.style.opacity = '1';
+    incoming.style.transform = 'translateY(0)';
     incoming.classList.add('is-active');
 
     setTimeout(function () {
