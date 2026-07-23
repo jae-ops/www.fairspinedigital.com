@@ -7,7 +7,11 @@
 <title>Google Business Profile Guide: Boost Local SEO in 2026 — Fairspine Digital</title>
 <link rel="canonical" href="https://www.fairspinedigital.com/google-business-profile"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo="/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
 <meta name="theme-color" content="#0D1B2A"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="Your Google Business Profile is doing more work than your website"/>
@@ -384,6 +388,58 @@ function closeDrawer() {
 }
 // Close drawer on resize to desktop
 window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeDrawer(); });
+</script>
+<script>
+// Hero headline typewriter effect (retypes each time it scrolls into view)
+(function () {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  var SPEED = 40; // ms per character
+
+  document.querySelectorAll('.page-hero h1').forEach(function (h1) {
+    if (!h1.dataset.original) h1.dataset.original = h1.innerHTML;
+
+    var runId = 0;
+
+    function typewrite() {
+      var thisRun = ++runId;
+      var tokens = h1.dataset.original.match(/<[^>]+>|[\s\S]/g) || [];
+      h1.style.minHeight = h1.offsetHeight + 'px';
+      h1.innerHTML = '';
+      h1.classList.add('th-typing');
+
+      var i = 0;
+      function step() {
+        if (thisRun !== runId) return;
+        while (i < tokens.length && tokens[i].charAt(0) === '<') i++;
+        if (i < tokens.length) i++;
+        h1.innerHTML = tokens.slice(0, i).join('');
+
+        if (i < tokens.length) {
+          setTimeout(step, SPEED);
+        } else {
+          h1.classList.remove('th-typing');
+        }
+      }
+      step();
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          typewrite();
+        } else {
+          runId++;
+          h1.innerHTML = h1.dataset.original;
+          h1.classList.remove('th-typing');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    io.observe(h1);
+  });
+})();
 </script>
 </body>
 </html>

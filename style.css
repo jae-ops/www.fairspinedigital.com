@@ -870,3 +870,15 @@ nav ~ .mobile-drawer ~ * { margin-top: 0 !important; }
     height: 52px;
   }
 }
+
+/* Hero headline typewriter effect */
+.page-hero h1.th-typing::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--teal, #1EB882);
+  animation: th-blink 0.8s step-end infinite;
+}
+@keyframes th-blink {
+  50% { opacity: 0; }
+}
