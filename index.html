@@ -338,7 +338,7 @@ window.addEventListener('resize',function(){if(window.innerWidth>768)closeDrawer
     'Fitness & wellness studios',
     'Legal services',
     'Restaurants & hospitality',
-    'Home renovation & contractors',
+    'Renovations & construction',
     'B2B SaaS & tech services',
     'Financial & insurance services',
     'Automotive',
@@ -347,13 +347,35 @@ window.addEventListener('resize',function(){if(window.innerWidth>768)closeDrawer
     'Recurring home services'
   ];
 
-  var BASE_STYLE = 'position:absolute;left:0;right:0;font-family:Sora,sans-serif;font-size:clamp(1.8rem,5.5vw,3.4rem);font-weight:700;letter-spacing:-0.02em;color:#1EB882;white-space:nowrap;transition:opacity 0.45s ease, transform 0.45s ease;';
+  // Auto-fit font size per word so long industry names never overflow
+  // their container and get clipped (previously a fixed clamp() size
+  // caused long strings like "Financial & insurance services" to run
+  // past the edge and get cut off by overflow:hidden).
+  var MAX_FONT = 54; // px, matches the old clamp's ~3.4rem cap
+  var MIN_FONT = 22; // px, floor for readability
+  var measureCanvas = document.createElement('canvas');
+  var measureCtx = measureCanvas.getContext('2d');
+
+  function fitFontSize(text) {
+    var available = el.clientWidth - 32; // small side padding buffer
+    var size = MAX_FONT;
+    measureCtx.font = '700 ' + size + 'px Sora, sans-serif';
+    var width = measureCtx.measureText(text).width;
+    if (width > available && width > 0) {
+      size = Math.floor(size * (available / width));
+    }
+    return Math.max(MIN_FONT, Math.min(MAX_FONT, size)) + 'px';
+  }
+
+  function baseStyle(text) {
+    return 'position:absolute;left:0;right:0;font-family:Sora,sans-serif;font-size:' + fitFontSize(text) + ';font-weight:700;letter-spacing:-0.02em;color:#1EB882;white-space:nowrap;transition:opacity 0.45s ease, transform 0.45s ease;';
+  }
 
   function makeSpan(text, visible) {
     var span = document.createElement('span');
     span.className = 'industries-trust__word' + (visible ? ' is-active' : '');
     span.textContent = text;
-    span.style.cssText = BASE_STYLE + (visible ? 'opacity:1;transform:translateY(0);' : 'opacity:0;transform:translateY(24px);');
+    span.style.cssText = baseStyle(text) + (visible ? 'opacity:1;transform:translateY(0);' : 'opacity:0;transform:translateY(24px);');
     return span;
   }
 
@@ -362,6 +384,11 @@ window.addEventListener('resize',function(){if(window.innerWidth>768)closeDrawer
   var current = makeSpan(industries[0], true);
   el.innerHTML = '';
   el.appendChild(current);
+
+  // Refit the visible word if the viewport is resized
+  window.addEventListener('resize', function () {
+    if (current) current.style.fontSize = fitFontSize(current.textContent);
+  });
 
   if (reduceMotion) return;
 
