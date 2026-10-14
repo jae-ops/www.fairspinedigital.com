@@ -12,10 +12,10 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2"/>
 <link rel="manifest" href="/site.webmanifest"/>
 <meta name="theme-color" content="#0D1B2A"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/style.css"/>
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="/style.css?v=m1"/>
+<link rel="stylesheet" href="/modern.css?v=1"/>
 </head>
 <body>
 <nav>
@@ -219,27 +219,27 @@
 
           <div style="display:flex;flex-direction:column;gap:6px;">
             <label for="fname" style="font-size:0.78rem;font-weight:600;color:var(--gray-700);text-transform:uppercase;letter-spacing:0.04em;">First name *</label>
-            <input id="fname" name="first_name" type="text" placeholder="Jane" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:Inter,sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
+            <input id="fname" name="first_name" type="text" placeholder="Jane" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
           </div>
 
           <div style="display:flex;flex-direction:column;gap:6px;">
             <label for="lname" style="font-size:0.78rem;font-weight:600;color:var(--gray-700);text-transform:uppercase;letter-spacing:0.04em;">Last name *</label>
-            <input id="lname" name="last_name" type="text" placeholder="Smith" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:Inter,sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
+            <input id="lname" name="last_name" type="text" placeholder="Smith" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
           </div>
 
           <div style="display:flex;flex-direction:column;gap:6px;">
             <label for="email" style="font-size:0.78rem;font-weight:600;color:var(--gray-700);text-transform:uppercase;letter-spacing:0.04em;">Email address *</label>
-            <input id="email" name="email" type="email" placeholder="jane@email.com" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:Inter,sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
+            <input id="email" name="email" type="email" placeholder="jane@email.com" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
           </div>
 
           <div style="display:flex;flex-direction:column;gap:6px;">
             <label for="phone" style="font-size:0.78rem;font-weight:600;color:var(--gray-700);text-transform:uppercase;letter-spacing:0.04em;">Phone number</label>
-            <input id="phone" name="phone" type="tel" placeholder="+27 80 000 0000" style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:Inter,sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
+            <input id="phone" name="phone" type="tel" placeholder="+27 80 000 0000" style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
           </div>
 
           <div style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;">
             <label for="role-select" style="font-size:0.78rem;font-weight:600;color:var(--gray-700);text-transform:uppercase;letter-spacing:0.04em;">Role you're applying for *</label>
-            <select id="role-select" name="role_applying_for" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:Inter,sans-serif;font-size:0.95rem;outline:none;background:var(--white);color:var(--text);transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'">
+            <select id="role-select" name="role_applying_for" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.95rem;outline:none;background:var(--white);color:var(--text);transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'">
               <option value="">Select a role...</option>
               <option value="Social Media Manager">Social Media Manager</option>
               <option value="SEO Strategist">SEO Strategist</option>
@@ -250,12 +250,12 @@
 
           <div style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;">
             <label for="why" style="font-size:0.78rem;font-weight:600;color:var(--gray-700);text-transform:uppercase;letter-spacing:0.04em;">Why Fairspine Digital? *</label>
-            <textarea id="why" name="message" placeholder="Tell us why you want to work with us and what you'd bring to the team..." rows="4" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:Inter,sans-serif;font-size:0.95rem;outline:none;resize:vertical;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"></textarea>
+            <textarea id="why" name="message" placeholder="Tell us why you want to work with us and what you'd bring to the team..." rows="4" required style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.95rem;outline:none;resize:vertical;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"></textarea>
           </div>
 
           <div style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;">
             <label for="portfolio" style="font-size:0.78rem;font-weight:600;color:var(--gray-700);text-transform:uppercase;letter-spacing:0.04em;">Portfolio / LinkedIn URL</label>
-            <input id="portfolio" name="portfolio_url" type="url" placeholder="https://yourportfolio.com" style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:Inter,sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
+            <input id="portfolio" name="portfolio_url" type="url" placeholder="https://yourportfolio.com" style="padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.95rem;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#1EB882'" onblur="this.style.borderColor='var(--gray-300)'"/>
           </div>
 
           <!-- Formspree honeypot spam protection -->
@@ -577,5 +577,6 @@ window.addEventListener('resize', function(){ if(window.innerWidth > 768) closeD
     });
   })();
 </script>
+<script src="/modern.js?v=1" defer></script>
 </body>
 </html>
