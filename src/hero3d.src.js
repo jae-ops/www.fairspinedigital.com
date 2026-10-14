@@ -84,10 +84,15 @@ export function initHero3D(container, opts = {}) {
   collar.position.y = H + 0.04;
   windmill.add(collar);
 
-  const HUB_Y = H + 0.3, HUB_Z = 0.78;
-  const shaft = new Mesh(new CylinderGeometry(0.06, 0.06, 0.5, 16), sparMat);
+  // The sails turn in a flat plane. The tower widens to radius R0 at the ground, so the
+  // plane must sit in front of that radius (plus the sail pitch and the glow bands), or
+  // the lowest sail cuts into the tower. HUB_Z keeps >= 0.1 clear of the widest point.
+  const SAIL_PITCH_SWING = 0.22, CLEARANCE = 0.1;
+  const HUB_Y = H + 0.3, HUB_Z = R0 + 0.026 + SAIL_PITCH_SWING + CLEARANCE;
+  const SHAFT_BACK = 0.25;                                   // where the shaft enters the cap
+  const shaft = new Mesh(new CylinderGeometry(0.06, 0.06, HUB_Z - SHAFT_BACK + 0.05, 16), sparMat);
   shaft.rotation.x = Math.PI / 2;
-  shaft.position.set(0, HUB_Y, HUB_Z - 0.2);
+  shaft.position.set(0, HUB_Y, (HUB_Z + SHAFT_BACK) / 2);
   windmill.add(shaft);
 
   // ---- rotor: four lattice sails like the logo ----------------------------

@@ -81,7 +81,7 @@
     var fallback = function () { stage.classList.add('is-static'); };
 
     var loadScene = function () {
-      import('/assets/hero3d.js?v=1').then(function (m) {
+      import('/assets/hero3d.js?v=2').then(function (m) {
         var api = m.initHero3D(stage.querySelector('.hero3d__canvas'), { reduceMotion: reduceMotion });
         if (!api) return fallback();
         stage.classList.add('is-live');
