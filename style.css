@@ -6,20 +6,20 @@
   --text: #0D1B2A; --radius: 12px; --radius-sm: 8px;
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
-h1,h2,h3,h4 { font-family: 'Sora', sans-serif; line-height: 1.15; }
+body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.15; }
 a { text-decoration: none; color: inherit; }
 
 nav { position: sticky; top: 0; z-index: 100; background: rgba(13,27,42,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 68px; display: flex; align-items: center; justify-content: space-between; }
-.logo { display: flex; align-items: center; gap: 12px; color: var(--white); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
+.logo { display: flex; align-items: center; gap: 12px; color: var(--white); font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
 .windmill-logo { width: 48px; height: 48px; flex-shrink: 0; }
 img.windmill-logo { width: auto; object-fit: contain; }
 .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
 .nav-links a { color: rgba(255,255,255,0.65); font-size: 0.9rem; font-weight: 400; transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--teal); }
 
-.btn { display: inline-flex; align-items: center; gap: 6px; padding: 0.6rem 1.4rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; border: none; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 0.6rem 1.4rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s; font-family: var(--font-body); border: none; }
 .btn-primary { background: var(--teal); color: var(--navy); font-weight: 600; }
 .btn-primary:hover { background: var(--teal-mid); color: var(--white); transform: translateY(-1px); }
 .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
@@ -51,7 +51,7 @@ img.windmill-logo { width: auto; object-fit: contain; }
 .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
 .how-step { padding: 1.75rem; background: var(--offwhite); border-radius: var(--radius); transition: transform 0.2s, box-shadow 0.2s; }
 .how-step:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
-.hw-num { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--gray-300); line-height: 1; margin-bottom: 0.75rem; }
+.hw-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--gray-300); line-height: 1; margin-bottom: 0.75rem; }
 .how-step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
 .how-step p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.65; }
 
@@ -101,7 +101,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 3rem 2r
 .search-overlay { position:fixed; inset:0; background:rgba(13,27,42,0.96); z-index:1000; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding-top:12vh; opacity:0; pointer-events:none; transition:opacity 0.25s; }
 .search-overlay.open { opacity:1; pointer-events:all; }
 .search-box { width:100%; max-width:680px; padding:0 1.5rem; }
-.search-box input { width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:50px; padding:1rem 1.5rem; font-family:'Inter',sans-serif; font-size:1.2rem; color:#fff; outline:none; transition:border-color 0.2s; }
+.search-box input { width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:50px; padding:1rem 1.5rem; font-family: var(--font-body); font-size:1.2rem; color:#fff; outline:none; transition:border-color 0.2s; }
 .search-box input::placeholder { color:rgba(255,255,255,0.35); }
 .search-box input:focus { border-color:var(--teal); }
 .search-close { position:absolute; top:1.5rem; right:2rem; background:none; border:none; color:rgba(255,255,255,0.5); font-size:1.5rem; cursor:pointer; transition:color 0.2s; }
@@ -116,7 +116,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 3rem 2r
 .search-hint { font-size:0.8rem; color:rgba(255,255,255,0.3); text-align:center; margin-top:2rem; }
 
 /* ── SEARCH TRIGGER BUTTON ── */
-.search-btn { background:none; border:none; cursor:pointer; color:rgba(255,255,255,0.65); display:flex; align-items:center; gap:6px; font-size:0.9rem; font-family:'Inter',sans-serif; padding:0.4rem 0.75rem; border-radius:50px; border:1px solid rgba(255,255,255,0.15); transition:all 0.2s; }
+.search-btn { background:none; border:none; cursor:pointer; color:rgba(255,255,255,0.65); display:flex; align-items:center; gap:6px; font-size:0.9rem; font-family: var(--font-body); padding:0.4rem 0.75rem; border-radius:50px; border:1px solid rgba(255,255,255,0.15); transition:all 0.2s; }
 .search-btn:hover { color:#fff; border-color:rgba(255,255,255,0.35); }
 
 /* ── CAREERS ── */
@@ -901,7 +901,7 @@ nav ~ .mobile-drawer ~ * { margin-top: 0 !important; }
   justify-content: center;
   text-align: center;
   padding: 0 0.5rem;
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(2.2rem, 6.5vw, 4.25rem);
   font-weight: 700;
   line-height: 1.12;
